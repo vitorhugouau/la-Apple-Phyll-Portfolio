@@ -1,0 +1,565 @@
+@media screen and (max-width: 1880) {
+  footer p {
+    text-align: center;
+    margin-top: 5rem;
+    /* Adicionei margem superior */
+  }
+
+  .projeto-footer {
+    margin-top: 28em;
+    /* Adicionei margem superior */
+  }
+
+  @media screen and (max-height: 900px) {
+    #experiencia {
+      margin: 10rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+    }
+
+    section {
+      margin: 8rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+    }
+  }
+
+  @media screen and (max-height: 778px) {
+    #experiencia {
+      margin: 10rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+    }
+
+    section {
+      margin: 8rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+    }
+  }
+
+  @media screen and (max-height: 615px) {
+    section {
+      margin: 1rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+    }
+
+    .sobre-detalhes-container {
+      margin: 6rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+    }
+
+  }
+
+  @media screen and (max-height: 615px) {
+    .sobre-detalhes-container {
+      margin: 10rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+    }
+  }
+
+  @media screen and (max-height: 560px) {
+    #experiencia {
+      margin: 12rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+
+    }
+  }
+
+}
+
+@media screen and (max-width: 1400px) {
+  #perfil {
+    height: 83vh;
+    margin-bottom: 6rem;
+  }
+
+  .sobre-containers {
+    flex-wrap: wrap;
+  }
+
+  #contato,
+  #projetos {
+    height: fit-content;
+  }
+
+  footer p {
+    text-align: center;
+    margin-top: 5rem;
+    /* Adicionei margem superior */
+  }
+
+  .projeto-footer {
+    margin-top: 8em;
+    /* Adicionei margem superior */
+  }
+
+  section {
+    margin: 2rem 5% 0 5%;
+    /* Aumentei a margem superior para 5rem */
+  }
+
+  @media screen and (max-height: 778px) {
+    #experiencia {
+      margin: 10rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+    }
+
+    section {
+      margin: 8rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+    }
+  }
+
+  @media screen and (max-height: 615px) {
+    section {
+      margin: 1rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+    }
+
+    .sobre-detalhes-container {
+      margin: 6rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+    }
+
+  }
+
+  @media screen and (max-height: 615px) {
+    .sobre-detalhes-container {
+      margin: 10rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+    }
+  }
+
+  @media screen and (max-height: 560px) {
+    #experiencia {
+      margin: 12rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+
+    }
+  }
+}
+
+@media screen and (max-width: 1260px) {
+
+  @media screen and (max-height: 615px) {
+
+    footer p {
+      text-align: center;
+      margin-top: 20rem;
+      /* Adicionei margem superior */
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 1200px) {
+
+  #nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    margin-top: 3rem;
+    /* Adicionei margem superior */
+  }
+
+  #contato {
+    margin: 10rem 5% 0 5%;
+    /* Aumentei a margem superior para 5rem */
+  }
+
+  .logo {
+    font-size: 2.1rem;
+    height: 9px;
+    margin: 2rem auto 1rem;
+    /* Aumentei a margem superior */
+    align-items: center;
+  }
+
+  #contato {
+    height: 45vh;
+  }
+
+  .contato-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    width: 45px;
+    align-items: center;
+    margin-top: 1rem;
+    /* Adicionei margem superior */
+  }
+
+  #experiencia,
+  .experiencia-container {
+    margin-top: 7rem;
+  }
+
+  .sessao-p1 {
+    font-size: 2rem;
+  }
+
+  #perfil,
+  .sessao-container {
+    display: block;
+
+  }
+
+  section,
+  .sessao-container {
+    height: fit-content;
+  }
+
+  section {
+    margin: 9rem 5% 0 5%;
+    /* Aumentei a margem superior para 5rem */
+  }
+
+  .foto-container {
+    width: 260px;
+    height: 260px;
+    margin: 0 auto 2rem;
+  }
+
+  .foto-container2 {
+    width: 200px;
+    height: 260px;
+    margin: 0 auto 2rem;
+  }
+
+  .sobre-containers {
+    margin-top: 0;
+  }
+
+  footer p {
+    text-align: center;
+    margin-top: 5rem;
+    /* Adicionei margem superior */
+
+  }
+
+  @media screen and (max-height: 778px) {
+    #experiencia {
+      margin: 10rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+
+    }
+  }
+
+  @media screen and (max-height: 601px) {
+    #contato {
+      margin: 14.8rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+
+    }
+  }
+
+  @media screen and (max-height: 560px) {
+    #experiencia {
+      margin: 12rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+
+    }
+  }
+
+}
+
+@media screen and (max-width: 834px) {
+
+  .foto-container {
+    width: 260px;
+    height: 260px;
+    margin: 0 auto 2rem;
+  }
+
+  .foto-container2 {
+    width: 170px;
+    height: 240px;
+    margin: 0 auto 2rem;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  #contato,
+  footer {
+    height: 40vh;
+  }
+
+  .projeto-footer {
+    margin-top: 2em;
+    /* Adicionei margem superior */
+  }
+
+  #perfil {
+    height: 83vh;
+    margin-bottom: 0;
+  }
+
+  article {
+    font-size: 1rem;
+  }
+
+  footer nav {
+    height: fit-content;
+    margin-bottom: 2rem;
+  }
+
+  .contact-info-upper-container,
+  .container-botao {
+    flex-wrap: wrap;
+  }
+
+  .contato-container {
+    font-size: 0.8rem;
+  }
+
+  .contact-info-container {
+    margin: 0;
+  }
+
+  .sessao-p1 {
+    font-size: 1.2rem;
+  }
+
+  .experiencia-sub-titulo {
+    font-size: 1.25rem;
+  }
+
+  .logo {
+    font-size: 1.9rem;
+  }
+
+  .links {
+    flex-direction: column;
+    text-align: center;
+    width: 45px;
+
+  }
+
+  .foto-container {
+    width: auto;
+    height: 60vw;
+    justify-content: center;
+  }
+
+  .foto-container2 {
+    width: auto;
+    height: 60vw;
+    justify-content: center;
+  }
+
+  .sessao-p2 {
+    font-size: 1.25rem;
+  }
+
+  .titulo {
+    font-size: 2.2rem;
+  }
+
+  .texto-container {
+    text-align: center;
+  }
+
+  /* section {
+    margin: 2rem 5% 0 5%; /* Aumentei a margem superior para 5rem 
+  } */
+
+  .experiencia-container {
+    margin: 2rem 5% 0 5%;
+    /* Aumentei a margem superior para 5rem */
+  }
+
+  @media screen and (max-height: 778px) {
+    #experiencia {
+      margin: 10rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+
+    }
+  }
+
+  @media screen and (max-height: 560px) {
+    #experiencia {
+      margin: 12rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  section {
+    margin: 9rem 5% 0 5%;
+    /* Aumentei a margem superior para 5rem */
+  }
+
+  /* .sobre-containers{
+    flex-direction: column;
+    align-items: center;
+     width: 50vh; 
+     height: 50vh;  
+  } */
+
+}
+
+@media screen and (max-width: 390px) {
+  .logo {
+    font-size: 1.9rem;
+  }
+
+  section {
+    margin: 9rem 5% 0 5%;
+    /* Aumentei a margem superior para 5rem */
+
+  }
+
+  .links {
+    font-size: 1.4rem;
+    width: 45px;
+  }
+
+  .contato-container {
+    font-size: 0.6rem;
+
+  }
+
+  #contato {
+    margin: 10rem 5% 0 5%;
+    /* Aumentei a margem superior para 5rem */
+  }
+
+  .experiencia-container {
+    margin: 2rem 5% 0 5%;
+    /* Aumentei a margem superior para 5rem */
+  }
+
+  #experiencia {
+    margin: 8rem 5% 0 5%;
+    /* Aumentei a margem superior para 5rem */
+
+  }
+
+  @media screen and (max-height: 844px) {
+    #contato {
+      margin: 12rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+    }
+
+  }
+
+  @media screen and (max-height: 780px) {
+    #experiencia {
+      margin: 10rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+
+    }
+  }
+
+  @media screen and (max-height: 560px) {
+    #experiencia {
+      margin: 12rem 5% 0 5%;
+      /* Aumentei a margem superior para 5rem */
+
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  section {
+    margin: 14rem 5% 0 5%;
+    /* Aumentei a margem superior para 5rem */
+  }
+
+  #contato {
+    margin: 16rem 5% 0 5%;
+    /* Aumentei a margem superior para 5rem */
+  }
+}
+
+@media screen and (max-width: 162px) {
+  section {
+    margin: 16rem 5% 0 5%;
+    /* Aumentei a margem superior para 5rem */
+  }
+
+  .detalhes-container {
+    border: none;
+  }
+
+  footer p {
+    text-align: center;
+    margin-top: 15rem;
+    /* Adicionei margem superior */
+  }
+
+  .sobre-detalhes-container {
+    margin: 2rem 5% 0 5%;
+    /* Aumentei a margem superior para 5rem */
+    font-size: 0.8rem;
+    align-items: center;
+  }
+
+  #experiencia {
+    margin: 17rem 5% 0 5%;
+    /* Aumentei a margem superior para 5rem */
+
+    align-items: center;
+  }
+
+  .sessao-p1 {
+    font-size: 1.5rem;
+  }
+
+  .titulo {
+    font-size: 1.5rem;
+  }
+
+  .experiencia-container {
+    font-size: 0.5rem;
+    align-items: center;
+  }
+
+  .experiencia-sub-titulo {
+    font-size: 1.3rem;
+  }
+
+  .icon {
+
+    width: 17px;
+    height: 17px;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  #contato {
+    margin: 25rem 5% 0 5%;
+    /* Aumentei a margem superior para 5rem */
+  }
+
+  .contato-container {
+    border: none;
+    align-items: center;
+    flex-direction: column;
+    font-size: 0.5rem;
+    width: 1rem;
+    padding: 1rem;
+
+  }
+
+  img.icon.contato-icon.email-icon,
+  img.icon.contato-icon {
+    display: none;
+  }
+}
