@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portifólio</title>
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/mode-dark.css">
   <link rel="stylesheet" href="/css/mediaqueries.css" />
-
 </head>
 
 <body>
@@ -18,27 +18,38 @@
       <br>
       <div>
         <ul class="links">
-          <!-- <li><a href="/html/sobre.html">Sobre</a></li> -->
-          <li><a href="#sobre">Sobre</a></li>
-
+          <div class="check">
+            <input type="checkbox" class="checkbox" id="chk" />
+            <label class="label" for="chk">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun"></i>
+              <div class="ball"></div>
+            </label>
+          </div>
+          <li><a href="/html/sobre.html">Sobre</a></li>
+            <li><a href="/html/experiencia.html">Experiência</a></li>
+            <li><a href="/html/projetos.html">Projetos</a></li>
+            <li><a href="/html/contato.html">Contatos</a></li>
+          <!-- <li><a href="#sobre">Sobre</a></li>
           <li><a href="#experiencia">Experiência</a></li>
           <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#contato">Contatos</a></li>
+          <li><a href="#contato">Contatos</a></li> -->
         </ul>
       </div>
     </nav>
   </div>
 
   <!-- --------------------------------------------------------------------------------------------------------------- -->
-  <section id="perfil" class="fade-in">
+  <section id="perfil">
     <div class="foto-container">
-      <img src="assets/perfil.jpg" alt="Vitor Hugo foto de perfil" />
+      <img src="assets/perfilSEM.png" alt="Vitor Hugo foto de perfil" />
     </div>
     <div class="sessao-texto">
       <p class="sessao-p1">Olá, eu sou</p>
       <h1 class="titulo">Vitor Hugo</h1>
       <p class="sessao-p2">Full Stack Developer</p>
       <div class="container-botao">
+
         <button class="btn btn-color-1"
           onclick="location.href='https://api.whatsapp.com/send/?phone=5514998864183&text&type=phone_number&app_absent=0'">
           Contato
@@ -49,14 +60,14 @@
         <img src="/assets/linkedin.png" alt="Meu perfil no linkedin" class="icon"
           onclick="location.href='https://linkedin.com/in/vitorhugorodri'" />
         <img src="/assets/github.png" alt="My Github perfil" class="icon"
-          onclick="location.href='https://github.com/vitorhugouau'" />
+          onclick=location.href='https://github.com/vitorhugouau' />
       </div>
     </div>
   </section>
-
   <!-- --------------------------------------------------------------------------------------------- -->
+   <!-- --------------------------------------------------------------------------------------------- -->
   <section id="sobre" class="fade-in">
-    <h1 class="titulos">Sobre Mim</h1>
+    <h1 class="titulo">Sobre Mim</h1>
     <div class="sessao-container">
       <div class="foto-container2">
         <img src="/assets/sobre.jpg" alt="Profile picture" class="sobre-pic" />
@@ -165,7 +176,7 @@
         </div>
         <div class="detalhes-container color-container">
           <div class="article-container">
-            <img src="/assets/projeto3.png" alt="Project 2" class="projetos-imagem" />
+            <img src="/assets/projeto3.jpg" alt="Project 2" class="projetos-imagem" />
           </div>
           <h2 class="experiencia-sub-titulo titulo-projeto">Loja de Fotos em Laravel</h2>
           <div class="container-botao">
@@ -199,7 +210,28 @@
     <p>Copyright &#169; 2024 Vitor Hugo. Todos os direitos reservados.</p>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script>
+    const sobreSection = document.querySelector("#sobre");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            document.body.classList.add("dark-mode");
+          } else {
+            document.body.classList.remove("dark-mode");
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    observer.observe(sobreSection);
+  </script>
+
+  <script src="/js/script.js"></script>
+  <script src="js/botao.js"></script>
+  <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
 
 </body>
 

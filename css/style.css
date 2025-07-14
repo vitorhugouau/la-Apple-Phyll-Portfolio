@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
-:root{
+:root {
   --rgb858585: rgb(85, 85, 85);
   --black: black;
   --white: white;
@@ -12,17 +12,86 @@
   --rgb: rgb(163, 163, 163);
   --rgb0: rgb(0, 0, 0);
   --rgb250: rgb(250, 250, 250);
-
 }
+
 
 * {
   margin: 0;
   padding: 0;
+  border: 0;
+  box-sizing: border-box;
 }
 
+/* -----------------------mode dark----------------------- */
 body {
   font-family: "Poppins", sans-serif;
+  background-color: var(--white);
+  /* transition: background 0.2s linear; */
 }
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.check {
+  padding: 7px;
+  height: 55px;
+}
+
+.label {
+  background-color: var(--black);
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px;
+  /*aqui*/
+  position: relative;
+  height: 30px;
+  /*aqui*/
+  width: 56px;
+  /*aqui*/
+  transform: scale(1.5);
+}
+
+.label i {
+  font-size: 15px;
+  /* Adjust icon size */
+  padding: 5px;
+
+}
+
+.label .ball {
+  background-color: var(--white);
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  /*aqui*/
+  height: 24px;
+  /*aqui*/
+  width: 24px;
+  /*aqui*/
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.label .ball {
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+/* ---------------------principal------------------- */
+
 
 html {
   scroll-behavior: smooth;
@@ -59,14 +128,16 @@ nav {
 a {
   color: var(--black);
   text-decoration: none;
-  text-decoration-color: var(--white);;
+  text-decoration-color: var(--white);
+  ;
 }
 
 a:hover {
   color: var(--grey);
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: var(--rgb181);;
+  text-decoration-color: var(--rgb181);
+  ;
 }
 
 .logo {
@@ -92,8 +163,8 @@ section {
 #perfil {
   display: flex;
   justify-content: center;
-  gap: 5rem;
-  /* height: 80vh; */
+  gap: 2rem;
+  height: 80vh;
 }
 
 .foto-container {
@@ -103,12 +174,17 @@ section {
   margin: auto 0;
   border-radius: 50%;
 }
+
 .foto-container2 {
   display: flex;
   height: 400px;
   width: 400px;
   margin: auto 0;
   border-radius: 50%;
+}
+
+h3 {
+  color: var(--black);
 }
 
 .sessao-texto {
@@ -172,8 +248,10 @@ section {
 
 .btn-color-1,
 .btn-color-2:hover {
-  background: var(--rgb535353);;
-  color: var(--white);;
+  background: var(--rgb535353);
+  ;
+  color: var(--white);
+  ;
 }
 
 .btn-color-1:hover {
@@ -193,6 +271,8 @@ section {
 }
 
 #sobre {
+  margin: 3rem 5% 0 5%;
+  /* Aumentei a margem superior para 5rem */
   position: relative;
 }
 
@@ -222,10 +302,9 @@ section {
   display: flex;
   flex-direction: column;
   flex: 1;
-  background: var(--white);;
+  background: var(--white);
   border-radius: 2rem;
-  border: var(--rgb53);
-  border-color: var(--rgb163);
+  border: var(--rgb53) !important;
   text-align: center;
   align-content: center;
   justify-content: center;
@@ -239,6 +318,7 @@ section {
 
 #experiencia {
   position: relative;
+
 }
 
 .experiencia-sub-titulo {
@@ -313,7 +393,6 @@ article .icon {
   justify-content: center;
   border-radius: 2rem;
   border: var(--rgb53);
-  border-color: var(--rgb163);
   background: (250, 250, 250);
   margin: 2rem auto;
   padding: 0.5rem;
@@ -348,11 +427,22 @@ footer {
 
 footer p {
   text-align: center;
-  margin-top: 10em; 
-
+  margin-top: 2em;
+  /* Adicionei margem superior */
 }
-.projeto-footer{
-  margin-top: 28em; 
+
+.projeto-footer {
+  margin-top: 28em;
+  /* Adicionei margem superior */
+}
+
+/* inversor */
+.foto {
+  filter: invert(100%);
+}
+
+.charge {
+  filter: invert(100%);
 }
 
 /* SCROLL SECTION */
@@ -381,4 +471,5 @@ html {
   font-size: 3rem;
   text-align: center;
   margin-top: 3rem;
+  margin-bottom: -4rem;
 }

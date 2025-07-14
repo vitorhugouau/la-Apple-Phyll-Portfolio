@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sobre Mim</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/mode-dark.css">
     <link rel="stylesheet" href="/css/mediaqueries.css" />
   </head>
   <body>
@@ -15,6 +16,14 @@
         <br>
         <div>
           <ul class="links">
+            <div class="check">
+              <input type="checkbox" class="checkbox" id="chk" />
+                <label class="label" for="chk">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+                  <div class="ball"></div>
+                </label>
+            </div>
             <li><a href="sobre.html">Sobre</a></li>
             <li><a href="experiencia.html">Experiência</a></li>
             <li><a href="projetos.html">Projetos</a></li>
@@ -25,6 +34,7 @@
     </div>
     
     <section id="sobre">
+        <!-- <p class="sessao-p1">Get To Know More</p> -->
         <h1 class="titulo">Sobre Mim</h1>
         <div class="sessao-container">
           <div class="foto-container2">
@@ -43,7 +53,7 @@
                   class="icon"
                 />
                 <h3>Experiência</h3>
-                <p>20 meses <br />Suporte TI</p>
+                <p>8 meses <br />Suporte TI</p>
               </div>
               
             </div>
@@ -66,6 +76,34 @@
             <p>Copyright &#169; 2024 Vitor Hugo. Todos os direitos reservados.</p>
           </footer>
          
+          
+          <script src="/js/script.js"></script>
+          <script src="/js/botao.js"></script>
+          <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
+
+          <!-- <script>
+            window.onload = function() {
+                const checkbox = document.getElementById('chk');
+                const isDarkMode = localStorage.getItem('theme') === '.dark';
+                
+                if (isDarkMode) {
+                  document.documentElement.classList.add('.dark');
+                    checkbox.checked = true;
+                }
+        
+                checkbox.addEventListener('change', function() {
+                  document.documentElement.classList.toggle('.dark');
+        
+                    if (document.documentElement.classList.contains('.dark')) {
+                        localStorage.setItem('theme', '.dark');
+                    } else {
+                        localStorage.setItem('theme', 'light');
+                    }
+                });
+            }
+        </script> -->
+        
+          
         </body>
 
       </html>
