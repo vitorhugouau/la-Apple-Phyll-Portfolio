@@ -18,14 +18,14 @@
       <br>
       <div>
         <ul class="links">
-          <div class="check">
+          <!-- <div class="check">
             <input type="checkbox" class="checkbox" id="chk" />
             <label class="label" for="chk">
               <i class="fas fa-moon"></i>
               <i class="fas fa-sun"></i>
               <div class="ball"></div>
             </label>
-          </div>
+          </div> -->
           <!-- <li><a href="/html/sobre.html">Sobre</a></li>
             <li><a href="/html/experiencia.html">Experiência</a></li>
             <li><a href="/html/projetos.html">Projetos</a></li>
@@ -66,7 +66,9 @@
   </section>
   <!-- --------------------------------------------------------------------------------------------- -->
   <section id="sobre" class="fade-in">
-    <h1 class="titulo">Sobre Mim</h1>
+    <div class="cnt-sobre">
+      <h1 class="titulos-sobres">Sobre Mim</h1>
+    </div>
     <div class="sessao-container">
       <div class="foto-container2">
         <img src="/assets/sobre.jpg" alt="Profile picture" class="sobre-pic" />
@@ -210,26 +212,33 @@
   </footer>
 
   <script>
+  document.addEventListener("DOMContentLoaded", () => {
     const sobreSection = document.querySelector("#sobre");
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            document.body.classList.add("dark-mode");
-          } else {
-            document.body.classList.remove("dark-mode");
-          }
-        });
-      },
-      { threshold: 0.6 }
-    );
+    if (sobreSection) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              console.log("Entrou no SOBRE");
+              document.documentElement.classList.add('dark');
+              document.documentElement.classList.remove('light');
+            } else {
+              console.log("Saiu do SOBRE");
+              document.documentElement.classList.remove('dark');
+              document.documentElement.classList.add('light');
+            }
+          });
+        },
+        { threshold: 0.6 }
+      );
 
-    observer.observe(sobreSection);
-  </script>
+      observer.observe(sobreSection);
+    }
+  });
+</script>
 
   <script src="/js/script.js"></script>
-  <script src="js/botao.js"></script>
   <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
 
 </body>

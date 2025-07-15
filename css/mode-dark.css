@@ -132,6 +132,18 @@ section {
   color: var(--black);
 }
 
+.titulos-sobres {
+  font-size: 3rem;
+  text-align: center;
+  color: var(--black);
+}
+
+.cnt-sobre {
+  display: flex;
+  justify-content: center;
+  
+}
+
 #sociais {
   display: flex;
   justify-content: center;
@@ -236,6 +248,7 @@ h3{
 .sessao-container {
   gap: 4rem;
   height: 80%;
+  margin-top: 2rem;
 }
 
 #experiencia {
