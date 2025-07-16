@@ -212,31 +212,31 @@
   </footer>
 
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const sobreSection = document.querySelector("#sobre");
+    document.addEventListener("DOMContentLoaded", () => {
+      const sobreSection = document.querySelector("#sobre");
 
-    if (sobreSection) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              console.log("Entrou no SOBRE");
-              document.documentElement.classList.add('dark');
-              document.documentElement.classList.remove('light');
-            } else {
-              console.log("Saiu do SOBRE");
-              document.documentElement.classList.remove('dark');
-              document.documentElement.classList.add('light');
-            }
-          });
-        },
-        { threshold: 0.6 }
-      );
+      if (sobreSection) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                console.log("Entrou no SOBRE");
+                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('light');
+              } else {
+                console.log("Saiu do SOBRE");
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+              }
+            });
+          },
+          { threshold: 0.8 }
+        );
 
-      observer.observe(sobreSection);
-    }
-  });
-</script>
+        observer.observe(sobreSection);
+      }
+    });
+  </script>
 
   <script src="/js/script.js"></script>
   <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
