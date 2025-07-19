@@ -481,3 +481,59 @@ html {
   margin-top: 3rem;
   margin-bottom: -4rem;
 }
+
+svg.squiggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 200vw;
+  z-index: -1000;
+}
+
+svg.squiggle path {
+  stroke-width: 0.9rem;
+  stroke: black;
+}
+
+.titulos-sobres {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.titulos-sobres.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.texto-digitado::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.experiencia-flip {
+  perspective: 1000px;
+  display: inline-block;
+}
+
+.texto-experiencia {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #1d1d1d;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.6s ease, filter 0.3s ease, opacity 0.3s ease;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  min-width: 200px;
+}
+

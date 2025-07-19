@@ -78,22 +78,20 @@
           <div class="detalhes-container">
             <img src="/assets/experience.png" alt="Experience icon" class="icon" />
             <h3>Experiência</h3>
-            <p>20 meses <br />Suporte TI</p>
+            <div class="experiencia-flip">
+              <p class="texto-experiencia">17 meses <br />Full Stack Developer</p>
+            </div>
           </div>
         </div>
         <div class="texto-container">
           <p>
-            No momento atual estudo no Instituto Toledo de Ensino, realizando o bacharelado de Sistemas De Informação,
-            além do
-            Tecnólogo em Análise e Desenvolvimento de Sistemas, onde estou construindo uma base solida de conhecimentos
-            na
-            área. Tenho me dedicado a diversos cursos online sobre programação e desenvolvimento, sempre em busca de
-            evoluir.
-            Sou estagiário de TI, na Prefeitura Municipal de Iacanga, onde lá eu trabalho com Instalação, edição e
-            configuração
-            de softwares essenciais para os membros da Empresa, treinamento de uso dos mesmos, manutenção preventiva e
-            corretiva
-            nos equipamentos da Empresa, registro de uso dos softwares e hardware e emissão de relatórios.
+            <span class="texto-fixo">
+              No momento atual estudo no Instituto Toledo de Ensino, realizando o bacharelado de Sistemas De Informação,
+              além do Tecnólogo em Análise e Desenvolvimento de Sistemas, onde estou construindo uma base solida de
+              conhecimentos na área. Tenho me dedicado a diversos cursos online sobre programação e desenvolvimento,
+              sempre em busca de evoluir.
+            </span>
+            <span class="texto-digitado"></span>
           </p>
         </div>
       </div>
@@ -103,7 +101,7 @@
   <!-- --------------------------------------------------------------------------------------------- -->
 
   <section id="experiencia" class="fade-in">
-    <p class="sessao-p1">Explore minha</p> 
+    <p class="sessao-p1">Explore minha</p>
     <h1 class="titulo">Experiência</h1>
     <div class="experiencia-container">
       <div class="sobre-containers">
@@ -211,6 +209,19 @@
     <p>Copyright &#169; 2024 Vitor Hugo. Todos os direitos reservados.</p>
   </footer>
 
+  <svg class="squiggle" viewBox="0 0 1000 2000" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <clipPath id="clip0_5_2">
+        <rect width="1000" height="2000" fill="white" />
+      </clipPath>
+    </defs>
+    <g clip-path="url(#clip0_5_2)">
+      <path
+        d="m 0,59.977833 c 44.467778,30.746702 123.27135,12.239526 140.20736,60.198417 11.11709,31.48105 -54.58091,56.07707 -46.811239,88.54672 9.186159,38.38921 89.000869,29.59029 96.739499,68.29726 5.4675,27.34727 -49.07894,43.30648 -44.54157,70.82336 5.30301,32.16013 44.38951,53.25622 75.87696,61.67857 69.53874,18.6004 154.76733,7.67548 213.1983,-34.36535 14.82289,-10.665 24.95874,-30.25583 25.45431,-48.51 0.47655,-17.55374 -9.09608,-35.90173 -21.91055,-47.90798 -22.53867,-21.11713 -55.74069,-34.44574 -86.59127,-32.97382 -35.78764,1.70746 -76.76899,17.63635 -96.35066,47.64016 -44.73021,68.5374 32.76162,176.1261 -11.00939,245.28003 -32.21715,50.89996 -143.0058,26.70196 -159.702287,84.58096 -12.552096,43.51232 69.968697,72.53161 67.746657,117.76367 -1.53927,31.33362 -51.56301,45.37168 -54.700032,76.58584 -3.77657,37.57781 15.164652,81.92099 46.188032,103.45942 28.0506,19.47453 72.36891,-10.11164 102.24223,6.43157 47.03266,26.04567 46.71525,105.47424 93.99506,131.06854 72.85578,39.4395 186.83612,66.4001 248.30061,10.8524 25.05778,-22.6457 28.37412,-76.02645 5.80921,-101.157 -44.19496,-49.21993 -144.34264,-48.34898 -198.20026,-9.94125 -20.81152,14.84141 -27.22315,48.79165 -21.31793,73.66155 4.59321,19.3444 26.08798,30.1014 40.56841,43.7257 13.01447,12.245 29.01578,21.5542 41.44556,34.0016 25.81046,25.8472 77.62199,43.1928 75.26684,79.6443 -5.13273,79.4414 -192.67902,71.7865 -185.00695,151.023 9.18555,94.8676 208.97707,49.9523 252.07872,134.961 57.16369,112.7431 -123.40588,270.3583 -53.19248,375.4714 86.84739,130.0151 330.155,123.5377 454.21686,117.0662"
+        stroke="#000" stroke-width="30" stroke-linejoin="round" stroke-linecap="round" fill="none" />
+    </g>
+  </svg>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const sobreSection = document.querySelector("#sobre");
@@ -237,8 +248,131 @@
       }
     });
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const section = document.querySelector("#sobre");
+      const title = document.querySelector(".titulos-sobres");
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              title.classList.add("visible");
+            }, 400);
+            observer.unobserve(section);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      observer.observe(section);
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const section = document.querySelector("#sobre");
+      const title = document.querySelector(".titulos-sobres");
+
+      let timeoutId = null;
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            timeoutId = setTimeout(() => {
+              title.classList.add("visible");
+            }, 1000);
+          } else {
+            clearTimeout(timeoutId);
+            title.classList.remove("visible");
+          }
+        });
+      }, { threshold: 0.5 });
+
+      observer.observe(section);
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const section = document.querySelector("#sobre");
+      const title = document.querySelector(".titulos-sobres");
+      const textoDigitado = document.querySelector(".texto-digitado");
+      const textoFinal = " Sou estagiário de TI, na Prefeitura Municipal de Iacanga, onde lá eu trabalho com Instalação, edição e configuração de softwares essenciais para os membros da Empresa, treinamento de uso dos mesmos, manutenção preventiva e corretiva nos equipamentos da Empresa, registro de uso dos softwares e hardware e emissão de relatórios.";
+
+      let titleTimeout = null;
+      let typingTimeout = null;
+      let typingIndex = 0;
+
+      function startTyping() {
+        textoDigitado.textContent = "";
+        typingIndex = 0;
+
+        function digitar() {
+          if (typingIndex < textoFinal.length) {
+            textoDigitado.textContent += textoFinal.charAt(typingIndex);
+            typingIndex++;
+            typingTimeout = setTimeout(digitar, 10);
+          }
+        }
+
+        setTimeout(digitar, 1000); // espera 1s antes de começar
+      }
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            titleTimeout = setTimeout(() => {
+              title.classList.add("visible");
+            }, 1000);
+            startTyping();
+          } else {
+            clearTimeout(titleTimeout);
+            clearTimeout(typingTimeout);
+            textoDigitado.textContent = "";
+            title.classList.remove("visible");
+          }
+        });
+      }, { threshold: 0.5 });
+
+      observer.observe(section);
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const textos = [
+        "17 meses <br />Full Stack Developer",
+        "20 meses <br />Suporte TI"
+      ];
+
+      const el = document.querySelector(".texto-experiencia");
+      let index = 0;
+      let girando = false;
+
+      setInterval(() => {
+        if (girando) return;
+        girando = true;
+
+        // inicia animação de saída
+        el.style.transform = "rotateX(90deg)";
+        el.style.opacity = "0";
+        el.style.filter = "blur(2px)";
+
+        setTimeout(() => {
+          // troca o conteúdo e volta com animação
+          index = (index + 1) % textos.length;
+          el.innerHTML = textos[index];
+          el.style.transform = "rotateX(0deg)";
+          el.style.opacity = "1";
+          el.style.filter = "blur(0px)";
+          girando = false;
+        }, 300);
+      }, 2000);
+    });
+  </script>
+
+
 
   <script src="/js/script.js"></script>
+  <script src="/js/scroll.js"></script>
   <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
 
 </body>

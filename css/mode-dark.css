@@ -157,7 +157,7 @@ section {
   height: 2rem;
 }
 
-.icon .dark{
+.dark .icon {
   filter: invert(100%);
 }
 
@@ -374,4 +374,10 @@ footer p {
   margin-top: 28em; /* Adicionei margem superior */
 }
 
+svg.squiggle .dark{
+  filter: invert(100%);
+}
 
+.dark svg.squiggle path {
+  stroke: white;
+}
