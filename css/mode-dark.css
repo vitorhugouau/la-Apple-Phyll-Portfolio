@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-  
+
 :root.dark {
-    --rgb858585: rgb(170, 170, 170); 
-    --black: white; 
-    --white: black; 
-    --grey: rgb(191, 191, 191); 
-    --rgb181: rgb(74, 74, 74); 
-    --rgb53: rgb(255, 255, 255) 0.1rem solid; 
-    --rgb535353: rgb(202, 202, 202); 
-    --rgb255: rgb(0, 0, 0) 0.1rem solid; 
-    --rgb: rgb(92, 92, 92); 
-    --rgb0: rgb(255, 255, 255); 
-    --rgb250: rgb(5, 5, 5); 
-  }
-  
+  --rgb858585: rgb(170, 170, 170);
+  --black: white;
+  --white: black;
+  --grey: rgb(191, 191, 191);
+  --rgb181: rgb(74, 74, 74);
+  --rgb53: rgb(255, 255, 255) 0.1rem solid;
+  --rgb535353: rgb(202, 202, 202);
+  --rgb255: rgb(0, 0, 0) 0.1rem solid;
+  --rgb: rgb(92, 92, 92);
+  --rgb0: rgb(255, 255, 255);
+  --rgb250: rgb(5, 5, 5);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -22,49 +22,59 @@
 }
 
 body.dark {
-  background: var(--black);;
+  background: var(--black);
+  ;
 }
 
-.label .dark{
+.label .dark {
   background-color: var(--black);
   border-radius: 50px;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px; /*aqui*/
+  padding: 4px;
+  /*aqui*/
   position: relative;
-  height: 30px; /*aqui*/
-  width: 56px; /*aqui*/
+  height: 30px;
+  /*aqui*/
+  width: 56px;
+  /*aqui*/
   transform: scale(1.5);
 }
-.label .ball .dark{
+
+.label .ball .dark {
   background-color: var(--white);
   border-radius: 50%;
   position: absolute;
   top: 3px;
-  left: 4px; /*aqui*/
-  height: 24px; /*aqui*/
-  width: 24px; /*aqui*/
+  left: 4px;
+  /*aqui*/
+  height: 24px;
+  /*aqui*/
+  width: 24px;
+  /*aqui*/
   transform: translateX(0px);
   transition: transform 0.2s linear;
 }
 
-a.dark{
+a.dark {
   color: var(--black);
   text-decoration: none;
-  text-decoration-color: var(--white);;
+  text-decoration-color: var(--white);
+  ;
 }
 
-p.dark{
+p.dark {
   color: var(--rgb858585);
 }
 
-a:hover .dark{
+a:hover .dark {
   color: var(--grey);
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: var(--rgb181);;
+  text-decoration-color: var(--rgb181);
+  ;
 }
 
 .logo {
@@ -101,6 +111,7 @@ section {
   margin: auto 0;
   border-radius: 50%;
 }
+
 .foto-container2 {
   display: flex;
   height: 400px;
@@ -142,7 +153,7 @@ section {
 .cnt-sobre {
   display: flex;
   justify-content: center;
-  
+
 }
 
 #sociais {
@@ -167,9 +178,10 @@ section {
   gap: 1rem;
 }
 
-h3{
+h3 {
   color: var(--black);
 }
+
 .btn {
   font-weight: 600;
   transition: all 300ms ease;
@@ -179,7 +191,7 @@ h3{
 }
 
 .btn-color-1,
-.btn-color-2 .dark{
+.btn-color-2 .dark {
   border: var(--rgb53);
 }
 
@@ -189,12 +201,14 @@ h3{
 }
 
 .btn-color-1,
-.btn-color-2:hover .dark{
-  background: var(--rgb535353);;
-  color: var(--white);;
+.btn-color-2:hover .dark {
+  background: var(--rgb535353);
+  ;
+  color: var(--white);
+  ;
 }
 
-.btn-color-1:hover .dark{
+.btn-color-1:hover .dark {
   background: var(--rgb0);
 }
 
@@ -202,7 +216,7 @@ h3{
   background: none;
 }
 
-.btn-color-2:hover .dark{
+.btn-color-2:hover .dark {
   border: var(--rgb255);
 }
 
@@ -234,13 +248,15 @@ h3{
   border-radius: 2rem;
 }
 
-.detalhes-container .dark{
+.detalhes-container .dark {
+  position: relative;
+  overflow: hidden;
   padding: 3.5rem;
   width: 7rem !important;
   display: flex;
   flex-direction: column;
   flex: 1;
-  background: var(--white);;
+  background: var(--white);
   border-radius: 2rem;
   border: var(--white) !important;
   border-color: var(--rgb163);
@@ -260,7 +276,7 @@ h3{
   position: relative;
 }
 
-.experiencia-sub-titulo .dark{
+.experiencia-sub-titulo .dark {
   color: var(--rgb858585);
   font-weight: 600;
   font-size: 1.75rem;
@@ -297,7 +313,7 @@ article .icon {
   position: relative;
 }
 
-.color-container .dark{
+.color-container .dark {
   border-color: var(--rgb163);
   background: var(--rgb250);
 }
@@ -308,12 +324,12 @@ article .icon {
   height: 90%;
 }
 
-.titulo-projeto .dark{
+.titulo-projeto .dark {
   margin: 1rem;
   color: var(--black);
 }
 
-.projetos-botao .dark{
+.projetos-botao .dark {
   color: var(--black);
   border-color: var(--rgb163);
 }
@@ -327,7 +343,7 @@ article .icon {
   height: 70vh;
 }
 
-.contato-container .dark{
+.contato-container .dark {
   display: flex;
   justify-content: center;
   border-radius: 2rem;
@@ -367,14 +383,15 @@ footer {
 
 footer p {
   text-align: center;
-  margin-top: 9em; 
+  margin-top: 9em;
 
 }
-.projeto-footer{
-  margin-top: 28em; 
+
+.projeto-footer {
+  margin-top: 28em;
 }
 
-svg.squiggle .dark{
+svg.squiggle .dark {
   filter: invert(100%);
 }
 
