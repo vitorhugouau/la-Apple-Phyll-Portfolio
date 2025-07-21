@@ -23,7 +23,7 @@ const scroll = () => {
   const distance = window.scrollY
   const pathLength = path.getTotalLength()
 
-  const speedFactor = 1.8 // ajuste aqui: quanto maior, mais aparece a cada scroll
+  const speedFactor = 1.8 
 
   let offset = pathLength - distance * speedFactor
   if (offset < 0) offset = 0
