@@ -162,6 +162,7 @@
     <p class="sessao-p1">Veja meus</p>
     <h1 class="titulo-projetos">Projetos</h1>
     <div class="grid-projetos efeito-reveal" id="projetosReveal">
+
       <!-- Stack Projeto 1 -->
       <div class="stack stack-projeto1">
         <div class="card-projeto projeto1-img1 principal">
@@ -174,7 +175,7 @@
             </div>
           </div>
         </div>
-        <div class="card-projeto projeto1-img2 extra oculto stack-item">
+        <div class="card-projeto projeto1-img2 extra oculto stack-item" data-projeto="1">
           <div class="img-container">
             <img src="/assets/pictures/login.png" alt="Projeto 1 Imagem 2" />
             <div class="overlay">
@@ -183,7 +184,7 @@
             </div>
           </div>
         </div>
-        <div class="card-projeto projeto1-img3 extra oculto stack-item">
+        <div class="card-projeto projeto1-img3 extra oculto stack-item" data-projeto="1">
           <div class="img-container">
             <img src="/assets/pictures/painel.png" alt="Projeto 1 Imagem 3" />
             <div class="overlay">
@@ -192,9 +193,9 @@
             </div>
           </div>
         </div>
-        <div class="card-projeto projeto1-img4 extra oculto stack-item">
+        <div class="card-projeto projeto1-img4 extra oculto stack-item" data-projeto="1">
           <div class="img-container">
-            <img src="/assets/pictures/site-att.png" alt="Projeto 1 Imagem 4" />
+            <img src="/assets/pictures/albuns.png" alt="Projeto 1 Imagem 4" />
             <div class="overlay">
               <h2>Projeto 1</h2>
               <p>Imagem 4 do Projeto 1.</p>
@@ -202,19 +203,20 @@
           </div>
         </div>
       </div>
+
       <!-- Stack Projeto 2 -->
       <div class="stack stack-projeto2">
         <div class="card-projeto projeto2-img1 principal">
           <div class="img-container">
             <span class="legenda">clicar para ver mais</span>
-            <img src="/assets/pictures/albuns.png" alt="Projeto 2 Imagem 1" />
+            <img src="/assets/pictures/site-att.png" alt="Projeto 2 Imagem 1" />
             <div class="overlay">
               <h2>Projeto 2</h2>
               <p>Imagem 1 do Projeto 2.</p>
             </div>
           </div>
         </div>
-        <div class="card-projeto projeto2-img2 extra oculto stack-item">
+        <div class="card-projeto projeto2-img2 extra oculto stack-item" data-projeto="2">
           <div class="img-container">
             <img src="/assets/pictures/site-att-2.png" alt="Projeto 2 Imagem 2" />
             <div class="overlay">
@@ -223,7 +225,7 @@
             </div>
           </div>
         </div>
-        <div class="card-projeto projeto2-img3 extra oculto stack-item">
+        <div class="card-projeto projeto2-img3 extra oculto stack-item" data-projeto="2">
           <div class="img-container">
             <img src="/assets/pictures/venda.png" alt="Projeto 2 Imagem 3" />
             <div class="overlay">
@@ -232,9 +234,10 @@
             </div>
           </div>
         </div>
-        <div class="card-projeto projeto-video extra oculto stack-item">
+        <div class="card-projeto projeto-video extra oculto stack-item" data-projeto="2">
           <div class="img-container">
-            <video src="/assets/pictures/video apresentação corrigido.mp4" controls poster="/assets/pictures/site-att.png" style="width:100%;height:100%;object-fit:cover;"></video>
+            <video src="/assets/pictures/video apresentação corrigido.mp4" controls
+              poster="/assets/pictures/site-att.png" style="width:100%;height:100%;object-fit:cover;"></video>
             <div class="overlay">
               <h2>Vídeo do Projeto</h2>
               <p>Assista a demonstração do projeto.</p>
@@ -242,8 +245,10 @@
           </div>
         </div>
       </div>
+
     </div>
   </section>
+
   <!-- --------------------------------------------------------------------------------------------- -->
   <section id="contato" class="fade-in">
     <p class="sessao-p1">Entrar em Contato</p>
@@ -398,7 +403,6 @@
         "17 meses <br />Full Stack Developer",
         "20 meses <br />Suporte TI"
       ];
-
       const el = document.querySelector(".texto-experiencia");
       let index = 0;
       let girando = false;
@@ -456,7 +460,6 @@
   <script src="/js/scroll.js"></script>
 
   <script>
-    // Fade-in animation para os cards ao rolar a página
     document.addEventListener("DOMContentLoaded", () => {
       const cards = document.querySelectorAll('.card-projeto');
       const observer = new IntersectionObserver(entries => {
@@ -475,89 +478,89 @@
       });
     });
   </script>
-
   <script>
-    // Efeito de revelar projetos com stack reversível
-    document.addEventListener('DOMContentLoaded', function() {
-      const grid = document.getElementById('projetosReveal');
-      const stacks = grid.querySelectorAll('.stack');
-      const principais = grid.querySelectorAll('.principal');
-      const legendas = grid.querySelectorAll('.legenda');
-      let expanded = false;
-      // Guardar referência da ordem original
-      const stack2 = grid.querySelector('.stack-projeto2');
-      const p2img1 = stack2.querySelector('.projeto2-img1');
-      const stack2Index = Array.from(grid.children).indexOf(stack2);
+    document.querySelectorAll('.stack').forEach(stack => {
+      const principal = stack.querySelector('.principal');
+      const extras = stack.querySelectorAll('.extra');
+      const legenda = principal.querySelector('.legenda');
 
-      function expandirProjetos() {
-        if (expanded) return;
-        expanded = true;
-        legendas.forEach(l => l.style.opacity = 0);
-        stacks.forEach(stack => {
-          const extras = stack.querySelectorAll('.extra');
-          extras.forEach((el, i) => {
-            setTimeout(() => {
-              el.classList.remove('oculto');
-              el.classList.add('revelado');
-              grid.appendChild(el);
-            }, 100 + i * 120);
-          });
-        });
-        setTimeout(() => {
-          const p2img1 = grid.querySelector('.projeto2-img1');
-          grid.appendChild(p2img1);
-        }, 800);
+      if (!legenda) {
+        console.warn('Legenda não encontrada em:', principal);
+        return;
       }
 
-      function fecharProjetos() {
-        if (!expanded) return;
-        expanded = false;
-        // Volta a legenda
-        legendas.forEach(l => l.style.opacity = 0.7);
-        // Volta extras para trás das principais
-        // Projeto 1
-        const stack1 = grid.querySelector('.stack-projeto1');
-        ['.projeto1-img2', '.projeto1-img3', '.projeto1-img4'].forEach(sel => {
-          const el = grid.querySelector(sel);
-          if (el) {
-            el.classList.remove('revelado');
-            el.classList.add('oculto');
-            stack1.appendChild(el);
-          }
-        });
-        // Projeto 2
-        const stack2 = grid.querySelector('.stack-projeto2');
-        ['.projeto2-img2', '.projeto2-img3', '.projeto-video'].forEach(sel => {
-          const el = grid.querySelector(sel);
-          if (el) {
-            el.classList.remove('revelado');
-            el.classList.add('oculto');
-            stack2.appendChild(el);
-          }
-        });
-        // Volta a imagem 1 do projeto 2 para dentro da stack2 na posição original
-        const p2img1 = grid.querySelector('.projeto2-img1');
-        if (p2img1) {
-          stack2.insertBefore(p2img1, stack2.firstChild);
-          // E se a stack2 não estiver na posição original, volta
-          if (Array.from(grid.children).indexOf(stack2) !== stack2Index) {
-            grid.insertBefore(stack2, grid.children[stack2Index]);
-          }
-        }
-      }
+      let aberto = false;
 
-      principais.forEach(card => {
-        card.addEventListener('click', function() {
-          if (!expanded) {
-            expandirProjetos();
-          } else {
-            fecharProjetos();
-          }
+      principal.addEventListener('click', () => {
+        aberto = !aberto;
+        console.log(`Projeto ${stack.className} aberto:`, aberto);
+
+        legenda.textContent = aberto ? 'clicar para fechar' : 'clicar para ver mais';
+
+        extras.forEach((extra, index) => {
+          setTimeout(() => {
+            extra.classList.toggle('oculto', !aberto);
+          }, index * 100);
         });
-        card.style.cursor = 'pointer';
       });
     });
+
   </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const grid = document.getElementById('projetosReveal');
+      const stacks = grid.querySelectorAll('.stack');
+      const estadoProjetos = {};
+
+      stacks.forEach(stack => {
+        const principal = stack.querySelector('.principal');
+        const projetoId = stack.classList.contains('stack-projeto1') ? '1' : '2';
+        estadoProjetos[projetoId] = false;
+
+        const extrasOriginais = stack.querySelectorAll('.extra');
+
+        principal.addEventListener('click', () => {
+          const isExpanded = estadoProjetos[projetoId];
+
+          if (!isExpanded) {
+            extrasOriginais.forEach((el, i) => {
+              setTimeout(() => {
+                el.classList.remove('oculto');
+                el.classList.add('revelado');
+                grid.appendChild(el); // move para fora do stack com animação
+              }, 100 + i * 120);
+            });
+
+            const legenda = principal.querySelector('.legenda');
+            if (legenda) legenda.style.opacity = 0;
+
+            estadoProjetos[projetoId] = true;
+          } else {
+            const extrasVisiveis = grid.querySelectorAll(`.extra.revelado[data-projeto='${projetoId}']`);
+            extrasVisiveis.forEach((el, i) => {
+              setTimeout(() => {
+                el.classList.remove('revelado');
+                el.classList.add('oculto');
+
+                // espera a transição terminar antes de mover de volta
+                setTimeout(() => {
+                  stack.appendChild(el);
+                }, 400);
+              }, i * 100);
+            });
+
+            const legenda = principal.querySelector('.legenda');
+            if (legenda) legenda.style.opacity = 0.7;
+
+            estadoProjetos[projetoId] = false;
+          }
+        });
+      });
+    });
+
+  </script>
+
 
 </body>
 

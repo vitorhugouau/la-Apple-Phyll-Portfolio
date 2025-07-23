@@ -1,89 +1,140 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portifólio</title>
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/mode-dark.css">
-  <link rel="stylesheet" href="/css/mediaqueries.css" />
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-  <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stack Reveal</title>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      margin: 0;
-      padding: 0;
+      display: flex;
+      justify-content: center;
+      padding: 50px;
+      background: #f0f0f0;
       font-family: sans-serif;
     }
 
-    .detalhes-container {
+    .duas-colunas {
+      display: flex;
+      gap: 30px;
       position: relative;
-      width: 400px;
-      height: 300px;
-      margin: 100px auto;
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 2px solid black;
-      z-index: 0;
     }
 
-    #particles-experiencia {
+    .coluna {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 200px;
+      position: relative;
+    }
+
+    .card, .slot {
+      position: relative;
+      width: 100%;
+      height: 150px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #ddd;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.6s ease;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .principal {
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .stack {
       position: absolute;
-      inset: 0;
-      z-index: 0;
+      top: 0;
+      left: 0;
       pointer-events: none;
     }
 
-    .conteudo {
-      position: relative;
-      z-index: 1;
-      padding: 2rem;
-      text-align: center;
+    .card.extra {
+      position: absolute;
+      width: 200px;
+      height: 150px;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: transform 0.6s ease, opacity 0.3s ease;
+    }
+
+    .vazio {
+      background: transparent;
+      border: 2px dashed #ccc;
     }
   </style>
 </head>
 <body>
+  <div class="duas-colunas">
+    <!-- Coluna A -->
+    <div class="coluna coluna-a">
+      <div class="card principal">
+        <img src="/assets/pictures/index.png" alt="Principal" />
+      </div>
+      <div class="slot" id="a2"></div>
+      <div class="slot" id="a3"></div>
+    </div>
 
-  <div class="detalhes-container">
-    <div id="particles-experiencia"></div>
-    <div class="conteudo">
-      <h2>Full Stack Developer</h2>
-      <p>Experiência com Laravel, React, SQL e muito mais.</p>
+    <!-- Coluna B -->
+    <div class="coluna coluna-b">
+      <div class="slot vazio" id="b1"></div>
+      <div class="slot" id="b2"></div>
+      <div class="slot" id="b3"></div>
+    </div>
+
+    <!-- Imagens ocultas -->
+    <div class="stack">
+      <div class="card extra"><img src="/assets/pictures/albuns.png" alt="2"></div>
+      <div class="card extra"><img src="/assets/pictures/index.png" alt="3"></div>
+      <div class="card extra"><img src="/assets/pictures/index.png" alt="4"></div>
+      <div class="card extra"><img src="/assets/pictures/index.png" alt="5"></div>
     </div>
   </div>
 
   <script>
-    tsParticles.load("particles-experiencia", {
-      fullScreen: { enable: false }, // ESSENCIAL
-      background: { color: "#ffffff" },
-      fpsLimit: 60,
-      particles: {
-        color: { value: "#000000" },
-        number: { value: 30, density: { enable: true, area: 400 } },
-        shape: { type: "circle" },
-        opacity: { value: 0.3 },
-        size: { value: { min: 2, max: 4 } },
-        move: {
-          enable: true,
-          speed: 1,
-          direction: "none",
-          outModes: { default: "bounce" }
+    const extras = document.querySelectorAll('.extra');
+    const slots = [
+      document.getElementById('a2'),
+      document.getElementById('b2'),
+      document.getElementById('a3'),
+      document.getElementById('b3'),
+    ];
+
+    const principal = document.querySelector('.principal');
+    let aberto = false;
+
+    principal.addEventListener('click', () => {
+      aberto = !aberto;
+
+      extras.forEach((extra, index) => {
+        const slot = slots[index];
+        if (!slot) return;
+
+        const startRect = extra.getBoundingClientRect();
+        const endRect = slot.getBoundingClientRect();
+
+        const deltaX = endRect.left - startRect.left;
+        const deltaY = endRect.top - startRect.top;
+
+        if (aberto) {
+          extra.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+          extra.style.opacity = '1';
+        } else {
+          extra.style.transform = `translate(0, 0)`;
+          extra.style.opacity = '0';
         }
-      },
-      interactivity: {
-        events: {
-          onHover: { enable: true, mode: "repulse" }
-        },
-        modes: {
-          repulse: { distance: 60 }
-        }
-      },
-      detectRetina: true
+      });
     });
   </script>
-
 </body>
 </html>
