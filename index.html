@@ -207,7 +207,7 @@
       <div class="stack stack-projeto2">
         <div class="card-projeto projeto2-img1 principal">
           <div class="img-container">
-            
+
             <img src="/assets/pictures/site-att.png" alt="Projeto 2 Imagem 1" />
             <div class="overlay">
               <h2>Projeto 2</h2>
@@ -244,7 +244,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -475,6 +474,37 @@
         card.style.transform = "translateY(40px)";
         observer.observe(card);
       });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const stacks = document.querySelectorAll('.stack');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const stackItems = entry.target.querySelectorAll('.extra');
+
+          if (entry.isIntersecting) {
+            stackItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.remove('oculto');
+                item.classList.add('revelado');
+              }, index * 150);
+            });
+          } else {
+            stackItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.remove('revelado');
+                item.classList.add('oculto');
+              }, index * 100); // efeito reverso também com delay
+            });
+          }
+        });
+      }, {
+        threshold: 0.4
+      });
+
+      stacks.forEach(stack => observer.observe(stack));
     });
   </script>
 
