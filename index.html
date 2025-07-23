@@ -167,7 +167,6 @@
       <div class="stack stack-projeto1">
         <div class="card-projeto projeto1-img1 principal">
           <div class="img-container">
-            <span class="legenda">clicar para ver mais</span>
             <img src="/assets/pictures/index.png" alt="Projeto 1 Imagem 1" />
             <div class="overlay">
               <h2>Projeto 1</h2>
@@ -208,7 +207,7 @@
       <div class="stack stack-projeto2">
         <div class="card-projeto projeto2-img1 principal">
           <div class="img-container">
-            <span class="legenda">clicar para ver mais</span>
+            
             <img src="/assets/pictures/site-att.png" alt="Projeto 2 Imagem 1" />
             <div class="overlay">
               <h2>Projeto 2</h2>
@@ -478,89 +477,6 @@
       });
     });
   </script>
-  <script>
-    document.querySelectorAll('.stack').forEach(stack => {
-      const principal = stack.querySelector('.principal');
-      const extras = stack.querySelectorAll('.extra');
-      const legenda = principal.querySelector('.legenda');
-
-      if (!legenda) {
-        console.warn('Legenda não encontrada em:', principal);
-        return;
-      }
-
-      let aberto = false;
-
-      principal.addEventListener('click', () => {
-        aberto = !aberto;
-        console.log(`Projeto ${stack.className} aberto:`, aberto);
-
-        legenda.textContent = aberto ? 'clicar para fechar' : 'clicar para ver mais';
-
-        extras.forEach((extra, index) => {
-          setTimeout(() => {
-            extra.classList.toggle('oculto', !aberto);
-          }, index * 100);
-        });
-      });
-    });
-
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const grid = document.getElementById('projetosReveal');
-      const stacks = grid.querySelectorAll('.stack');
-      const estadoProjetos = {};
-
-      stacks.forEach(stack => {
-        const principal = stack.querySelector('.principal');
-        const projetoId = stack.classList.contains('stack-projeto1') ? '1' : '2';
-        estadoProjetos[projetoId] = false;
-
-        const extrasOriginais = stack.querySelectorAll('.extra');
-
-        principal.addEventListener('click', () => {
-          const isExpanded = estadoProjetos[projetoId];
-
-          if (!isExpanded) {
-            extrasOriginais.forEach((el, i) => {
-              setTimeout(() => {
-                el.classList.remove('oculto');
-                el.classList.add('revelado');
-                grid.appendChild(el); // move para fora do stack com animação
-              }, 100 + i * 120);
-            });
-
-            const legenda = principal.querySelector('.legenda');
-            if (legenda) legenda.style.opacity = 0;
-
-            estadoProjetos[projetoId] = true;
-          } else {
-            const extrasVisiveis = grid.querySelectorAll(`.extra.revelado[data-projeto='${projetoId}']`);
-            extrasVisiveis.forEach((el, i) => {
-              setTimeout(() => {
-                el.classList.remove('revelado');
-                el.classList.add('oculto');
-
-                // espera a transição terminar antes de mover de volta
-                setTimeout(() => {
-                  stack.appendChild(el);
-                }, 400);
-              }, i * 100);
-            });
-
-            const legenda = principal.querySelector('.legenda');
-            if (legenda) legenda.style.opacity = 0.7;
-
-            estadoProjetos[projetoId] = false;
-          }
-        });
-      });
-    });
-
-  </script>
-
 
 </body>
 
