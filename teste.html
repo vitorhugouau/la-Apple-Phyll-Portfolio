@@ -1,140 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Stack Reveal</title>
+  <meta charset="UTF-8">
+  <title>Texto com Efeito Lusion</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      display: flex;
-      justify-content: center;
-      padding: 50px;
-      background: #f0f0f0;
-      font-family: sans-serif;
-    }
-
-    .duas-colunas {
-      display: flex;
-      gap: 30px;
-      position: relative;
-    }
-
-    .coluna {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      width: 200px;
-      position: relative;
-    }
-
-    .card, .slot {
-      position: relative;
-      width: 100%;
-      height: 150px;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #ddd;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: all 0.6s ease;
-    }
-
-    .card img {
-      width: 100%;
+    html, body {
+      margin: 0;
+      padding: 0;
       height: 100%;
-      object-fit: cover;
+      background: #000;
+      color: white;
+      font-family: sans-serif;
+      overflow: hidden;
     }
-
-    .principal {
-      cursor: pointer;
-      z-index: 10;
+    #canvas-container {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
     }
-
-    .stack {
+    .text-wrapper {
+      display: none;
+    }
+    .plane-texture {
       position: absolute;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-    }
-
-    .card.extra {
-      position: absolute;
-      width: 200px;
-      height: 150px;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: transform 0.6s ease, opacity 0.3s ease;
-    }
-
-    .vazio {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
       background: transparent;
-      border: 2px dashed #ccc;
+      padding: 0;
+      margin: 0;
+      pointer-events: none;
     }
   </style>
 </head>
 <body>
-  <div class="duas-colunas">
-    <!-- Coluna A -->
-    <div class="coluna coluna-a">
-      <div class="card principal">
-        <img src="/assets/pictures/index.png" alt="Principal" />
-      </div>
-      <div class="slot" id="a2"></div>
-      <div class="slot" id="a3"></div>
-    </div>
-
-    <!-- Coluna B -->
-    <div class="coluna coluna-b">
-      <div class="slot vazio" id="b1"></div>
-      <div class="slot" id="b2"></div>
-      <div class="slot" id="b3"></div>
-    </div>
-
-    <!-- Imagens ocultas -->
-    <div class="stack">
-      <div class="card extra"><img src="/assets/pictures/albuns.png" alt="2"></div>
-      <div class="card extra"><img src="/assets/pictures/index.png" alt="3"></div>
-      <div class="card extra"><img src="/assets/pictures/index.png" alt="4"></div>
-      <div class="card extra"><img src="/assets/pictures/index.png" alt="5"></div>
-    </div>
+  <div id="canvas-container"></div>
+  <div class="plane-texture">Onde o conceito ganha forma digital</div>
+  <div class="teste">
+    csacsac
+    csacsaccsa
+    cas
+    <h1>
+      dvsvs
+    </h1>
   </div>
 
+  <script src="https://unpkg.com/curtainsjs@7.2.0/dist/curtains.min.js"></script>
+  <script id="vs" type="x-shader/x-vertex">
+    precision mediump float;
+
+    attribute vec3 aVertexPosition;
+    attribute vec2 aTextureCoord;
+
+    uniform mat4 uMVMatrix;
+    uniform mat4 uPMatrix;
+    uniform float uTime;
+    uniform vec2 uMouse;
+
+    varying vec2 vTextureCoord;
+
+    void main() {
+      vec3 pos = aVertexPosition;
+      float dist = distance(vec2(pos.x, pos.y), uMouse);
+      pos.z += sin(uTime * 2.0 + pos.x * 10.0 + pos.y * 10.0) * 0.1 / (dist + 0.9);
+      gl_Position = uPMatrix * uMVMatrix * vec4(pos, 1.0);
+      vTextureCoord = aTextureCoord;
+    }
+  </script>
+
+  <script id="fs" type="x-shader/x-fragment">
+    precision mediump float;
+
+    varying vec2 vTextureCoord;
+    uniform sampler2D uSampler;
+
+    void main() {
+      vec4 color = texture2D(uSampler, vTextureCoord);
+      gl_FragColor = color;
+    }
+  </script>
+
   <script>
-    const extras = document.querySelectorAll('.extra');
-    const slots = [
-      document.getElementById('a2'),
-      document.getElementById('b2'),
-      document.getElementById('a3'),
-      document.getElementById('b3'),
-    ];
+    const curtains = new Curtains({ container: "canvas-container", pixelRatio: Math.min(1.5, window.devicePixelRatio) });
 
-    const principal = document.querySelector('.principal');
-    let aberto = false;
+    const planeEl = document.querySelector(".plane-texture");
 
-    principal.addEventListener('click', () => {
-      aberto = !aberto;
-
-      extras.forEach((extra, index) => {
-        const slot = slots[index];
-        if (!slot) return;
-
-        const startRect = extra.getBoundingClientRect();
-        const endRect = slot.getBoundingClientRect();
-
-        const deltaX = endRect.left - startRect.left;
-        const deltaY = endRect.top - startRect.top;
-
-        if (aberto) {
-          extra.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
-          extra.style.opacity = '1';
-        } else {
-          extra.style.transform = `translate(0, 0)`;
-          extra.style.opacity = '0';
-        }
-      });
+    const plane = curtains.addPlane(planeEl, {
+      vertexShaderID: "vs",
+      fragmentShaderID: "fs",
+      widthSegments: 40,
+      heightSegments: 40,
+      uniforms: {
+        uTime: { name: "uTime", type: "1f", value: 0 },
+        uMouse: { name: "uMouse", type: "2f", value: [0.5, 0.5] }
+      }
     });
+
+    const mouse = { x: 0.5, y: 0.5 };
+
+    window.addEventListener("mousemove", e => {
+      mouse.x = e.clientX / window.innerWidth;
+      mouse.y = 1.0 - e.clientY / window.innerHeight;
+    });
+
+    if (plane) {
+      plane.onRender(() => {
+        plane.uniforms.uTime.value += 0.01;
+        plane.uniforms.uMouse.value = [mouse.x, mouse.y];
+      });
+    }
   </script>
 </body>
 </html>

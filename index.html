@@ -163,7 +163,6 @@
     <h1 class="titulo-projetos">Projetos</h1>
     <div class="grid-projetos efeito-reveal" id="projetosReveal">
 
-      <!-- Stack Projeto 1 -->
       <div class="stack stack-projeto1">
         <div class="card-projeto projeto1-img1 principal">
           <div class="img-container">
@@ -174,72 +173,15 @@
             </div>
           </div>
         </div>
-        <div class="card-projeto projeto1-img2 extra oculto stack-item" data-projeto="1">
-          <div class="img-container">
-            <img src="/assets/pictures/login.png" alt="Projeto 1 Imagem 2" />
-            <div class="overlay">
-              <h2>Projeto 1</h2>
-              <p>Imagem 2 do Projeto 1.</p>
-            </div>
-          </div>
-        </div>
-        <div class="card-projeto projeto1-img3 extra oculto stack-item" data-projeto="1">
-          <div class="img-container">
-            <img src="/assets/pictures/painel.png" alt="Projeto 1 Imagem 3" />
-            <div class="overlay">
-              <h2>Projeto 1</h2>
-              <p>Imagem 3 do Projeto 1.</p>
-            </div>
-          </div>
-        </div>
-        <div class="card-projeto projeto1-img4 extra oculto stack-item" data-projeto="1">
-          <div class="img-container">
-            <img src="/assets/pictures/albuns.png" alt="Projeto 1 Imagem 4" />
-            <div class="overlay">
-              <h2>Projeto 1</h2>
-              <p>Imagem 4 do Projeto 1.</p>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <!-- Stack Projeto 2 -->
       <div class="stack stack-projeto2">
         <div class="card-projeto projeto2-img1 principal">
           <div class="img-container">
-
             <img src="/assets/pictures/site-att.png" alt="Projeto 2 Imagem 1" />
             <div class="overlay">
               <h2>Projeto 2</h2>
               <p>Imagem 1 do Projeto 2.</p>
-            </div>
-          </div>
-        </div>
-        <div class="card-projeto projeto2-img2 extra oculto stack-item" data-projeto="2">
-          <div class="img-container">
-            <img src="/assets/pictures/site-att-2.png" alt="Projeto 2 Imagem 2" />
-            <div class="overlay">
-              <h2>Projeto 2</h2>
-              <p>Imagem 2 do Projeto 2.</p>
-            </div>
-          </div>
-        </div>
-        <div class="card-projeto projeto2-img3 extra oculto stack-item" data-projeto="2">
-          <div class="img-container">
-            <img src="/assets/pictures/venda.png" alt="Projeto 2 Imagem 3" />
-            <div class="overlay">
-              <h2>Projeto 2</h2>
-              <p>Imagem 3 do Projeto 2.</p>
-            </div>
-          </div>
-        </div>
-        <div class="card-projeto projeto-video extra oculto stack-item" data-projeto="2">
-          <div class="img-container">
-            <video src="/assets/pictures/video apresentação corrigido.mp4" controls
-              poster="/assets/pictures/site-att.png" style="width:100%;height:100%;object-fit:cover;"></video>
-            <div class="overlay">
-              <h2>Vídeo do Projeto</h2>
-              <p>Assista a demonstração do projeto.</p>
             </div>
           </div>
         </div>
@@ -470,7 +412,7 @@
       }, { threshold: 0.2 });
 
       cards.forEach(card => {
-        card.style.opacity = 0;
+        card.style.opacity = 0; 
         card.style.transform = "translateY(40px)";
         observer.observe(card);
       });
@@ -478,34 +420,25 @@
   </script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const stacks = document.querySelectorAll('.stack');
+      const extras = document.querySelectorAll('.card-projeto');
 
-      const observer = new IntersectionObserver((entries) => {
+      const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-          const stackItems = entry.target.querySelectorAll('.extra');
+          const el = entry.target;
 
           if (entry.isIntersecting) {
-            stackItems.forEach((item, index) => {
-              setTimeout(() => {
-                item.classList.remove('oculto');
-                item.classList.add('revelado');
-              }, index * 150);
-            });
+            el.classList.add('revelado');
+            el.classList.remove('oculto');
           } else {
-            stackItems.forEach((item, index) => {
-              setTimeout(() => {
-                item.classList.remove('revelado');
-                item.classList.add('oculto');
-              }, index * 100); // efeito reverso também com delay
-            });
+            el.classList.remove('revelado');
+            el.classList.add('oculto');
           }
         });
-      }, {
-        threshold: 0.4
-      });
+      }, { threshold: 0.3 });
 
-      stacks.forEach(stack => observer.observe(stack));
+      extras.forEach(el => observer.observe(el));
     });
+
   </script>
 
 </body>
