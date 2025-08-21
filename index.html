@@ -154,10 +154,13 @@
       <div class="stack stack-projeto1">
         <div class="card-projeto projeto1-img1 principal">
           <div class="img-container">
-            <img src="/assets/pictures/index.png" alt="Projeto 1 Imagem 1" />
+            <div class="carousel">
+              <img src="/assets/pictures/index.png" alt="Projeto 1 Imagem 1" />
+              <img src="/assets/pictures/albuns.png" alt="Projeto 1 Imagem 2" />
+              <img src="/assets/pictures/login.png" alt="Projeto 1 Imagem 3" />
+            </div>
             <div class="overlay">
               <h2>Projeto</h2>
-              <!-- <p>Imagem 1 do Projeto 1.</p> -->
             </div>
           </div>
         </div>
@@ -166,10 +169,14 @@
       <div class="stack stack-projeto2">
         <div class="card-projeto projeto2-img1 principal">
           <div class="img-container">
-            <img src="/assets/pictures/site-att.png" alt="Projeto 2 Imagem 1" />
+            <div class="carousel2">
+              <img src="/assets/pictures/site-att.png" alt="Projeto 2 Imagem 1" />
+              <img src="/assets/pictures/site-att-2.png" alt="Projeto 2 Imagem 2" />
+              <img src="/assets/pictures/venda.png" alt="Projeto 2 Imagem 3" />
+              <img src="/assets/pictures/painel.png" alt="Projeto 2 Imagem 4" />
+            </div>
             <div class="overlay">
               <h2>Projeto</h2>
-              <!-- <p>Imagem 1 do Projeto 2.</p> -->
             </div>
           </div>
         </div>
@@ -400,7 +407,7 @@
       }, { threshold: 0.2 });
 
       cards.forEach(card => {
-        card.style.opacity = 0; 
+        card.style.opacity = 0;
         card.style.transform = "translateY(40px)";
         observer.observe(card);
       });
@@ -428,7 +435,27 @@
     });
 
   </script>
+  <script>
+    const carousel = document.querySelector(".carousel");
+    const total = carousel.children.length;
+    let index = 0;
 
+    setInterval(() => {
+      index = (index + 1) % total;
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+    }, 2000); 
+  </script>
+  <!-- -------------------------------------------- -->
+  <script>
+    const carousel2 = document.querySelector(".carousel2");
+    const total2 = carousel2.children.length;
+    let index2 = 0;
+
+    setInterval(() => {
+      index2 = (index2 + 1) % total2;
+      carousel2.style.transform = `translateX(-${index2 * 100}%)`;
+    }, 2000); 
+  </script>
 </body>
 
 </html>
