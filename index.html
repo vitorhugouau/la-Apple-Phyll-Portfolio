@@ -98,7 +98,6 @@
       <div class="sobre-containers">
         <div class="detalhes-container">
           <div id="particles-experiencia"></div>
-
           <div class="conteudo">
             <h2 class="experiencia-sub-titulo">Full Stack Developer</h2>
             <div class="article-container">
@@ -249,21 +248,26 @@
                 console.log("Entrou no SOBRE");
                 document.documentElement.classList.add('dark');
                 document.documentElement.classList.remove('light');
+                loadParticles(true); // dark
               } else {
                 console.log("Saiu do SOBRE");
                 document.documentElement.classList.remove('dark');
                 document.documentElement.classList.add('light');
+                loadParticles(false); // dark
               }
             });
           },
-          { threshold: 0.8 }
+          { threshold: 0.6 }
         );
 
-        observer.observe(sobreSection);
+          observer.observe(sobreSection);
+
+      // estado inicial
+      loadParticles(false);
       }
     });
   </script>
-  <script>
+  <!-- <script>
     document.addEventListener("DOMContentLoaded", () => {
       const section = document.querySelector("#sobre");
       const title = document.querySelector(".titulos-sobres");
@@ -281,7 +285,7 @@
 
       observer.observe(section);
     });
-  </script>
+  </script> -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const section = document.querySelector("#sobre");
@@ -300,7 +304,7 @@
             title.classList.remove("visible");
           }
         });
-      }, { threshold: 0.5 });
+      }, { threshold: 0.1 });
 
       observer.observe(section);
     });
@@ -380,13 +384,14 @@
       }, 2000);
     });
   </script>
-  <script>
+ <script>
+  function loadParticles(isDark) {
     tsParticles.load("particles-experiencia", {
       fullScreen: { enable: false },
-      background: { color: "#ffffff" },
+      background: { color: isDark ? "#0d0d0d" : "#ffffff" },
       fpsLimit: 1000,
       particles: {
-        color: { value: "#000000" },
+        color: { value: isDark ? "#ffffff" : "#000000" },
         number: { value: 100, density: { enable: true, area: 400 } },
         shape: { type: "circle" },
         opacity: { value: 0.7 },
@@ -400,15 +405,19 @@
       },
       interactivity: {
         events: {
-          onHover: { enable: true, mode: "repulse" }
+          onHover: { enable: true, mode: "repulse" },
+          onClick: { enable: true, mode: "push" }
         },
         modes: {
-          repulse: { distance: 60 }
+          repulse: { distance: 90 },
+          push: { quantity: 2 }
         }
       },
       detectRetina: true
     });
-  </script>
+  }
+</script>
+
 
   <script src="/js/script.js"></script>
   <script src="/js/scroll.js"></script>
@@ -486,7 +495,7 @@
       carousel3.style.transform = `translateX(-${index3 * 100}%)`;
     }, 2000); 
   </script>
- 
+
 
 
   <script>
@@ -494,13 +503,13 @@
     projeto1Card.addEventListener("click", () => {
       window.open("https://github.com/vitorhugouau/MANAGEABLE-LIBRARY.git", "_blank");
     });
-    </script>
-    <script>
-      const projeto2Card = document.getElementById("projeto2-card");
-      projeto2Card.addEventListener("click", () => {
-        window.open("https://github.com/vitorhugouau/laravel-mp-aws-db", "_blank");
-      });
-    </script>
+  </script>
+  <script>
+    const projeto2Card = document.getElementById("projeto2-card");
+    projeto2Card.addEventListener("click", () => {
+      window.open("https://github.com/vitorhugouau/laravel-mp-aws-db", "_blank");
+    });
+  </script>
 
   <!-- <script>
     const projeto3Card = document.getElementById("projeto3-card");

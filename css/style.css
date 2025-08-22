@@ -691,7 +691,7 @@ svg.squiggle path {
 
 .grid-projetos {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* força 2 por linha */
+  grid-template-columns: repeat(2, 1fr); 
   gap: 24px;
   padding: 20px;
   width: 100%;
