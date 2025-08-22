@@ -160,7 +160,7 @@
               <img src="/assets/pictures/login.png" alt="Projeto 1 Imagem 3" />
             </div>
             <div class="overlay">
-              <h2>manageable-library</h2>
+              <h2>Manageable Library</h2>
             </div>
           </div>
         </div>
@@ -173,10 +173,29 @@
               <img src="/assets/pictures/site-att.png" alt="Projeto 2 Imagem 1" />
               <img src="/assets/pictures/site-att-2.png" alt="Projeto 2 Imagem 2" />
               <img src="/assets/pictures/venda.png" alt="Projeto 2 Imagem 3" />
-              <img src="/assets/pictures/painel.png" alt="Projeto 2 Imagem 4" />
+              <img src="/assets/pictures/pix.jpg" alt="Projeto 2 Imagem 4" />
+              <img src="/assets/pictures/pagamento.jpg" alt="Projeto 2 Imagem 5" />
+              <img src="/assets/pictures/painel.png" alt="Projeto 2 Imagem 6" />
             </div>
             <div class="overlay">
-              <h2>laravel-mp-aws-db</h2>
+              <h2>Laravel MP AWS DB</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="stack stack-projeto3">
+        <div class="card-projeto projeto3-img1 principal" id="projeto3-card">
+          <div class="img-container">
+            <div class="carousel3">
+              <img src="/assets/pictures/martins/welcome.png" alt="Projeto 3 Imagem 1" />
+              <img src="/assets/pictures/martins/ticket.png" alt="Projeto 3 Imagem 2" />
+              <img src="/assets/pictures/martins/calender.png" alt="Projeto 3 Imagem 3" />
+              <img src="/assets/pictures/martins/mail.png" alt="Projeto 3 Imagem 4" />
+              <img src="/assets/pictures/martins/sms.png" alt="Projeto 3 Imagem 5" />
+              <img src="/assets/pictures/martins/metrics.png" alt="Projeto 3 Imagem 6" />
+            </div>
+            <div class="overlay">
+              <h2>Martins Adviser</h2>
             </div>
           </div>
         </div>
@@ -458,18 +477,37 @@
   </script>
 
   <script>
-    const projeto2Card = document.getElementById("projeto2-card");
-    projeto2Card.addEventListener("click", () => {
-      window.open("https://github.com/vitorhugouau/laravel-mp-aws-db", "_blank");
-    });
+    const carousel3 = document.querySelector(".carousel3");
+    const total3 = carousel3.children.length;
+    let index3 = 0;
+
+    setInterval(() => {
+      index3 = (index3 + 1) % total3;
+      carousel3.style.transform = `translateX(-${index3 * 100}%)`;
+    }, 2000); 
   </script>
+ 
+
 
   <script>
     const projeto1Card = document.getElementById("projeto1-card");
     projeto1Card.addEventListener("click", () => {
-      window.open("https://github.com/vitorhugouau/MANAGEABLE-LIBRARY.git", "_blank"); 
+      window.open("https://github.com/vitorhugouau/MANAGEABLE-LIBRARY.git", "_blank");
     });
-  </script>
+    </script>
+    <script>
+      const projeto2Card = document.getElementById("projeto2-card");
+      projeto2Card.addEventListener("click", () => {
+        window.open("https://github.com/vitorhugouau/laravel-mp-aws-db", "_blank");
+      });
+    </script>
+
+  <!-- <script>
+    const projeto3Card = document.getElementById("projeto3-card");
+    projeto1Card.addEventListener("click", () => {
+      window.open("https://martinsadviser.com", "_blank");
+    });
+  </script> -->
 </body>
 
 </html>

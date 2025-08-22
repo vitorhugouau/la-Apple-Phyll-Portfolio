@@ -590,14 +590,6 @@ svg.squiggle path {
   letter-spacing: -1px;
 }
 
-.grid-projetos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(645px, 1fr));
-  gap: 40px;
-  max-width: 100rem;
-  margin: 0 auto;
-}
-
 .card-projeto {
   background: transparent;
   border-radius: 24px;
@@ -699,10 +691,12 @@ svg.squiggle path {
 
 .grid-projetos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* força 2 por linha */
   gap: 24px;
   padding: 20px;
   width: 100%;
+  max-width: 100rem;
+  margin: 0 auto;
 }
 
 .card-projeto.principal {
@@ -806,6 +800,17 @@ svg.squiggle path {
 }
 
 .carousel2 img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.carousel3 {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+  width: 100%;
+}
+
+.carousel3 img {
   width: 100%;
   flex-shrink: 0;
   object-fit: cover;
