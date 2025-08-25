@@ -201,7 +201,27 @@
       </div>
     </div>
   </section>
+  <!-- Modal escondido -->
+  <div id="modal-projeto3" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
 
+      <h2 class="martins-title">Martins Adviser</h2>
+      <div class="modal-body">
+        <img src="/assets/pictures/martins/welcome.png" class="preview-img" alt="Preview" />
+        <p class="modal-description">
+          Martins Adviser é um sistema completo tipo CRM, projetado para gerenciar e automatizar o envio de mensagens em 
+          múltiplos canais, incluindo e-mail, WhatsApp e SMS. Desenvolvido com React no front-end e Laravel + Node.js no 
+          back-end, o projeto utiliza uma infraestrutura robusta combinando AWS, Contabo e Railway para garantir 
+          escalabilidade e confiabilidade. Para integração com comunicação, foram utilizados serviços como Twilio e Evolution, 
+          permitindo automação e programação de envios de forma eficiente. É uma solução prática para empresas que precisam gerenciar 
+          contatos e campanhas de forma automatizada, unindo design moderno com alta performance e automatização de processos complexos.
+        </p>
+      </div>
+
+      <button class="btn-ver-projeto">Ver projeto</button>
+    </div>
+  </div>
   <!-- --------------------------------------------------------------------------------------------- -->
   <section id="contato" class="fade-in">
     <p class="sessao-p1">Entrar em Contato</p>
@@ -236,6 +256,8 @@
     </g>
   </svg>
 
+  <script src="js/modal.js"></script>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const sobreSection = document.querySelector("#sobre");
@@ -248,22 +270,21 @@
                 console.log("Entrou no SOBRE");
                 document.documentElement.classList.add('dark');
                 document.documentElement.classList.remove('light');
-                loadParticles(true); // dark
+                loadParticles(true);
               } else {
                 console.log("Saiu do SOBRE");
                 document.documentElement.classList.remove('dark');
                 document.documentElement.classList.add('light');
-                loadParticles(false); // dark
+                loadParticles(false);
               }
             });
           },
           { threshold: 0.6 }
         );
 
-          observer.observe(sobreSection);
+        observer.observe(sobreSection);
 
-      // estado inicial
-      loadParticles(false);
+        loadParticles(false);
       }
     });
   </script>
@@ -384,39 +405,39 @@
       }, 2000);
     });
   </script>
- <script>
-  function loadParticles(isDark) {
-    tsParticles.load("particles-experiencia", {
-      fullScreen: { enable: false },
-      background: { color: isDark ? "#0d0d0d" : "#ffffff" },
-      fpsLimit: 1000,
-      particles: {
-        color: { value: isDark ? "#ffffff" : "#000000" },
-        number: { value: 100, density: { enable: true, area: 400 } },
-        shape: { type: "circle" },
-        opacity: { value: 0.7 },
-        size: { value: { min: 2, max: 4 } },
-        move: {
-          enable: true,
-          speed: 1,
-          direction: "none",
-          outModes: { default: "bounce" }
-        }
-      },
-      interactivity: {
-        events: {
-          onHover: { enable: true, mode: "repulse" },
-          onClick: { enable: true, mode: "push" }
+  <script>
+    function loadParticles(isDark) {
+      tsParticles.load("particles-experiencia", {
+        fullScreen: { enable: false },
+        background: { color: isDark ? "#0d0d0d" : "#ffffff" },
+        fpsLimit: 1000,
+        particles: {
+          color: { value: isDark ? "#ffffff" : "#000000" },
+          number: { value: 100, density: { enable: true, area: 400 } },
+          shape: { type: "circle" },
+          opacity: { value: 0.7 },
+          size: { value: { min: 2, max: 4 } },
+          move: {
+            enable: true,
+            speed: 1,
+            direction: "none",
+            outModes: { default: "bounce" }
+          }
         },
-        modes: {
-          repulse: { distance: 90 },
-          push: { quantity: 2 }
-        }
-      },
-      detectRetina: true
-    });
-  }
-</script>
+        interactivity: {
+          events: {
+            onHover: { enable: true, mode: "repulse" },
+            onClick: { enable: true, mode: "push" }
+          },
+          modes: {
+            repulse: { distance: 90 },
+            push: { quantity: 2 }
+          }
+        },
+        detectRetina: true
+      });
+    }
+  </script>
 
   <script src="/js/script.js"></script>
   <script src="/js/scroll.js"></script>

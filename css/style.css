@@ -570,6 +570,10 @@ svg.squiggle path {
   z-index: 0;
 }
 
+#particles-experiencia canvas {
+  transition: background-color 0.6s ease-in-out;
+}
+
 .conteudo {
   position: relative;
   z-index: 1;
@@ -691,7 +695,7 @@ svg.squiggle path {
 
 .grid-projetos {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   padding: 20px;
   width: 100%;
@@ -804,6 +808,7 @@ svg.squiggle path {
   flex-shrink: 0;
   object-fit: cover;
 }
+
 .carousel3 {
   display: flex;
   transition: transform 0.8s ease-in-out;
@@ -814,4 +819,94 @@ svg.squiggle path {
   width: 100%;
   flex-shrink: 0;
   object-fit: cover;
+}
+
+/* Fundo do modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0; /* ocupa toda a tela */
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+}
+
+.modal.show {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #ffffff10, #ffffff05);
+  padding: 30px;
+  border-radius: 20px;
+  width: 70%;
+  max-width: 700px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  animation: fadeIn 0.3s ease;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal-body h2 {
+  font-size: 26px;
+}
+
+.martins-title{
+    font-size: 26px;
+}
+
+.modal-body img.preview-img {
+  width: 515px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-body p {
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+.btn-ver-projeto {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 12px;
+  background: #523cbb;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+.btn-ver-projeto:hover {
+  background: #a99df0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.modal-description {
+  color: #e3e3e3;
 }
