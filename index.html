@@ -201,27 +201,92 @@
       </div>
     </div>
   </section>
-  <!-- Modal escondido -->
+  <!-- modal escondido  -->
   <div id="modal-projeto3" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
 
       <h2 class="martins-title">Martins Adviser</h2>
       <div class="modal-body">
-        <img src="/assets/pictures/martins/welcome.png" class="preview-img" alt="Preview" />
+        <div class="carousel-container33">
+          <div class="carousel33">
+            <img src="/assets/pictures/martins/welcome.png" class="preview-img" alt="Preview" />
+            <img src="/assets/pictures/martins/ticket.png" class="preview-img" alt="Preview" />
+            <img src="/assets/pictures/martins/calender.png" class="preview-img" alt="Preview" />
+            <img src="/assets/pictures/martins/mail.png" class="preview-img" alt="Preview" />
+            <img src="/assets/pictures/martins/sms.png" class="preview-img" alt="Preview" />
+            <img src="/assets/pictures/martins/metrics.png" class="preview-img" alt="Preview" />
+          </div>
+        </div>
         <p class="modal-description">
-          Martins Adviser é um sistema completo tipo CRM, projetado para gerenciar e automatizar o envio de mensagens em 
-          múltiplos canais, incluindo e-mail, WhatsApp e SMS. Desenvolvido com React no front-end e Laravel + Node.js no 
-          back-end, o projeto utiliza uma infraestrutura robusta combinando AWS, Contabo e Railway para garantir 
-          escalabilidade e confiabilidade. Para integração com comunicação, foram utilizados serviços como Twilio e Evolution, 
-          permitindo automação e programação de envios de forma eficiente. É uma solução prática para empresas que precisam gerenciar 
-          contatos e campanhas de forma automatizada, unindo design moderno com alta performance e automatização de processos complexos.
+          Martins Adviser é um sistema completo tipo CRM, projetado para gerenciar e automatizar o envio de mensagens em
+          múltiplos canais, incluindo e-mail, WhatsApp e SMS. Desenvolvido com React no front-end e Laravel + Node.js no
+          back-end, o projeto utiliza uma infraestrutura robusta combinando AWS, Contabo e Railway para garantir
+          escalabilidade e confiabilidade. Para integração com comunicação, foram utilizados serviços como Twilio e
+          Evolution,
+          permitindo automação e programação de envios de forma eficiente. É uma solução prática para empresas que
+          precisam gerenciar
+          contatos e campanhas de forma automatizada, unindo design moderno com alta performance e automatização de
+          processos complexos.
         </p>
       </div>
 
       <button class="btn-ver-projeto">Ver projeto</button>
     </div>
   </div>
+  <!-- Modal Projeto 1 -->
+  <div id="modal-projeto1" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+
+      <h2 class="martins-title">Manageable Library</h2>
+      <div class="modal-body">
+        <div class="carousel-container33">
+          <div class="carousel33">
+            <img src="/assets/pictures/index.png" class="preview-img" alt="Preview" />
+            <img src="/assets/pictures/albuns.png" class="preview-img" alt="Preview" />
+            <img src="/assets/pictures/login.png" class="preview-img" alt="Preview" />
+          </div>
+        </div>
+        <p class="modal-description">
+          Manageable Library é um sistema para organização e gerenciamento de bibliotecas digitais.
+          Permite cadastrar livros, organizar coleções e controlar empréstimos de forma prática e eficiente.
+          Desenvolvido com foco em usabilidade, combina boas práticas de design com funcionalidades intuitivas.
+        </p>
+      </div>
+
+      <button class="btn-ver-projeto">Ver projeto</button>
+    </div>
+  </div>
+
+  <!-- Modal Projeto 2 -->
+  <div id="modal-projeto2" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+
+      <h2 class="martins-title">Laravel MP AWS DB</h2>
+      <div class="modal-body">
+        <div class="carousel-container33">
+          <div class="carousel33">
+            <img src="/assets/pictures/site-att.png" class="preview-img" alt="Projeto 2 Imagem 1" />
+            <img src="/assets/pictures/site-att-2.png" class="preview-img" alt="Projeto 2 Imagem 2" />
+            <img src="/assets/pictures/venda.png" class="preview-img" alt="Projeto 2 Imagem 3" />
+            <img src="/assets/pictures/pix.jpg" class="preview-img" alt="Projeto 2 Imagem 4" />
+            <img src="/assets/pictures/pagamento.jpg" class="preview-img" alt="Projeto 2 Imagem 5" />
+            <img src="/assets/pictures/painel.png" class="preview-img" alt="Projeto 2 Imagem 6" />
+          </div>
+        </div>
+        <p class="modal-description">
+          Projeto Laravel com integração Mercado Pago, hospedado em AWS e banco de dados otimizado.
+          Inclui fluxo completo de compras, pagamentos online, gestão de pedidos e painel administrativo.
+          Focado em escalabilidade, alta disponibilidade e segurança nas transações.
+        </p>
+      </div>
+
+      <button class="btn-ver-projeto">Ver projeto</button>
+    </div>
+  </div>
+
   <!-- --------------------------------------------------------------------------------------------- -->
   <section id="contato" class="fade-in">
     <p class="sessao-p1">Entrar em Contato</p>
@@ -484,41 +549,27 @@
 
   </script>
   <script>
-    const carousel = document.querySelector(".carousel");
-    const total = carousel.children.length;
-    let index = 0;
+    function startCarousel(selector, interval = 2000) {
+      const carousel = document.querySelector(selector);
+      if (!carousel) return;
 
-    setInterval(() => {
-      index = (index + 1) % total;
-      carousel.style.transform = `translateX(-${index * 100}%)`;
-    }, 2000); 
-  </script>
-  <!-- -------------------------------------------- -->
-  <script>
-    const carousel2 = document.querySelector(".carousel2");
-    const total2 = carousel2.children.length;
-    let index2 = 0;
+      const total = carousel.children.length;
+      let index = 0;
 
-    setInterval(() => {
-      index2 = (index2 + 1) % total2;
-      carousel2.style.transform = `translateX(-${index2 * 100}%)`;
-    }, 2000); 
-  </script>
+      setInterval(() => {
+        index = (index + 1) % total;
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+      }, interval);
+    }
 
-  <script>
-    const carousel3 = document.querySelector(".carousel3");
-    const total3 = carousel3.children.length;
-    let index3 = 0;
-
-    setInterval(() => {
-      index3 = (index3 + 1) % total3;
-      carousel3.style.transform = `translateX(-${index3 * 100}%)`;
-    }, 2000); 
+    startCarousel(".carousel");  
+    startCarousel(".carousel2"); 
+    startCarousel(".carousel3");  
+    startCarousel(".carousel33"); 
   </script>
 
 
-
-  <script>
+  <!-- <script>
     const projeto1Card = document.getElementById("projeto1-card");
     projeto1Card.addEventListener("click", () => {
       window.open("https://github.com/vitorhugouau/MANAGEABLE-LIBRARY.git", "_blank");
@@ -529,7 +580,7 @@
     projeto2Card.addEventListener("click", () => {
       window.open("https://github.com/vitorhugouau/laravel-mp-aws-db", "_blank");
     });
-  </script>
+  </script> -->
 
   <!-- <script>
     const projeto3Card = document.getElementById("projeto3-card");

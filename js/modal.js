@@ -1,20 +1,27 @@
-const modal = document.getElementById("modal-projeto3");
-const card = document.getElementById("projeto3-card");
-const span = modal.querySelector(".close");
+const cards = document.querySelectorAll(".card-projeto.principal");
+const modals = document.querySelectorAll(".modal");
 
-// Abre modal
-card.addEventListener("click", () => {
-  modal.classList.add("show");
+cards.forEach((card) => {
+  card.addEventListener("click", () => {
+    const projectId = card.id.replace("-card", ""); 
+    const modal = document.getElementById(`modal-${projectId}`);
+    if (modal) modal.classList.add("show");
+  });
 });
 
-// Fecha modal
-span.addEventListener("click", () => {
-  modal.classList.remove("show");
-});
-
-// Fecha clicando fora
-window.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.classList.remove("show");
+modals.forEach((modal) => {
+  const span = modal.querySelector(".close");
+  if (span) {
+    span.addEventListener("click", () => {
+      modal.classList.remove("show");
+    });
   }
+});
+
+window.addEventListener("click", (e) => {
+  modals.forEach((modal) => {
+    if (e.target === modal) {
+      modal.classList.remove("show");
+    }
+  });
 });
