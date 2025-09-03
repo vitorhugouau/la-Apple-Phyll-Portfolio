@@ -201,7 +201,7 @@
       </div>
     </div>
   </section>
-  <!-- modal escondido  -->
+
   <div id="modal-projeto3" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
@@ -231,7 +231,7 @@
         </p>
       </div>
 
-      <button class="btn-ver-projeto">Ver projeto</button>
+      <button class="btn-ver-projeto" id="btn-projeto3" >Ver projeto</button>
     </div>
   </div>
   <!-- Modal Projeto 1 -->
@@ -263,7 +263,6 @@
   <div id="modal-projeto2" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-
       <h2 class="martins-title">Laravel MP AWS DB</h2>
       <div class="modal-body">
         <div class="carousel-container33">
@@ -562,10 +561,25 @@
       }, interval);
     }
 
-    startCarousel(".carousel");  
-    startCarousel(".carousel2"); 
+    startCarousel(".carousel");
+    startCarousel(".carousel2");
     startCarousel(".carousel3");  
-    startCarousel(".carousel33"); 
+  </script>
+  <script>
+    function startCarouselAll(selector, interval = 2000) {
+      const carousels = document.querySelectorAll(selector);
+      carousels.forEach(carousel => {
+        const total = carousel.children.length;
+        let index = 0;
+
+        setInterval(() => {
+          index = (index + 1) % total;
+          carousel.style.transform = `translateX(-${index * 100}%)`;
+        }, interval);
+      });
+    }
+
+    startCarouselAll(".carousel33");
   </script>
 
 
@@ -582,12 +596,11 @@
     });
   </script> -->
 
-  <!-- <script>
-    const projeto3Card = document.getElementById("projeto3-card");
-    projeto1Card.addEventListener("click", () => {
+  <script>
+    document.getElementById("btn-projeto3").addEventListener("click", () => {
       window.open("https://martinsadviser.com", "_blank");
     });
-  </script> -->
+  </script>
 </body>
 
 </html>
