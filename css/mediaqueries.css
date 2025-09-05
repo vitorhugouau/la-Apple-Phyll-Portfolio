@@ -8,37 +8,37 @@
   }
   @media screen and (max-height: 900px)  {
     #experiencia{
-      margin: 10rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 10rem 5% 0 5%; 
       }
       section{
-        margin: 8rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+        margin: 8rem 5% 0 5%; 
       }
     }
     @media screen and (max-height: 778px)  {
       #experiencia{
-        margin: 10rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+        margin: 10rem 5% 0 5%; 
         }
         section{
-          margin: 8rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+          margin: 8rem 5% 0 5%; 
         }
       }
       @media screen and (max-height: 615px)  {
       section{
-        margin: 1rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+        margin: 1rem 5% 0 5%; 
       }
       .sobre-detalhes-container{
-        margin: 6rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+        margin: 6rem 5% 0 5%; 
       }
       
       }
       @media screen and (max-height: 615px)  {
         .sobre-detalhes-container{
-          margin: 10rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+          margin: 10rem 5% 0 5%; 
         }
       }
       @media screen and (max-height: 560px)  {
         #experiencia{
-          margin: 12rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+          margin: 12rem 5% 0 5%; 
         
           }
         }
@@ -79,33 +79,33 @@
     margin-top: 10em; /* Adicionei margem superior */
   }
   section {
-    margin: 2rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 2rem 5% 0 5%; 
   }
   @media screen and (max-height: 778px)  {
     #experiencia{
-      margin: 10rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 10rem 5% 0 5%; 
       }
       section{
-        margin: 8rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+        margin: 8rem 5% 0 5%; 
       }
     }
     @media screen and (max-height: 615px)  {
     section{
-      margin: 1rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 1rem 5% 0 5%; 
     }
     .sobre-detalhes-container{
-      margin: 6rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 6rem 5% 0 5%; 
     }
     
     }
     @media screen and (max-height: 615px)  {
       .sobre-detalhes-container{
-        margin: 10rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+        margin: 10rem 5% 0 5%; 
       }
     }
     @media screen and (max-height: 560px)  {
       #experiencia{
-        margin: 12rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+        margin: 12rem 5% 0 5%; 
       
         }
       }
@@ -121,7 +121,7 @@
     margin-top: 3rem; /* Adicionei margem superior */
   }
   #contato{
-    margin: 10rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 10rem 5% 0 5%; 
   }
 
   .logo {
@@ -148,7 +148,7 @@
     margin-top: 1rem; /* Adicionei margem superior */
   }
   #experiencia{
-    margin: 12rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 12rem 5% 0 5%; 
   }
   
   .experiencia-container {
@@ -168,7 +168,7 @@
   }
 
   section {
-    margin: 14rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 14rem 5% 0 5%; 
   }
 
   .foto-container {
@@ -191,24 +191,24 @@
   
   }
   #sobre {
-    margin: 9rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 9rem 5% 0 5%; 
     position: relative;
   }
   @media screen and (max-height: 778px)  {
     #experiencia{
-      margin: 10rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 10rem 5% 0 5%; 
     
       }
     }
     @media screen and (max-height: 601px)  {
       #contato{
-        margin: 14.8rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+        margin: 14.8rem 5% 0 5%; 
       
         }
       }
     @media screen and (max-height: 560px)  {
       #experiencia{
-        margin: 12rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+        margin: 12rem 5% 0 5%; 
       
         }
       }
@@ -216,21 +216,21 @@
 }
 @media screen and (max-width: 1114px) { /* Microsoft Surface Duo */ 
   #sobre {
-    margin: 13rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 13rem 5% 0 5%; 
     position: relative;
   }
   #experiencia{
-    margin: 15rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 15rem 5% 0 5%; 
   }
 }
 
 @media screen and (max-width: 884px) { /* Galaxy Fold2*/ 
   #sobre {
-    margin: 8rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 8rem 5% 0 5%; 
     position: relative;
   }
   #experiencia{
-    margin: 10rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 10rem 5% 0 5%; 
   }
 }
 @media screen and (max-width: 834px) {
@@ -249,31 +249,31 @@
 }
 @media screen and (max-width: 834px) {
   #sobre {
-    margin: 7rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 7rem 5% 0 5%; 
     position: relative;
   }
   #projetos{
-    margin: 8rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 8rem 5% 0 5%; 
   }
   .sobre-containers{
-    margin: -2rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: -2rem 5% 0 5%; 
   }
   #experiencia{
-    margin: 9rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 9rem 5% 0 5%; 
   }
 }
 
 @media screen and (max-width: 820px) {
   #contato{
-    margin: 6rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 6rem 5% 0 5%; 
   }
 }
 @media screen and (max-width: 768px) {
   section{
-    margin: 12rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 12rem 5% 0 5%; 
   }
   #sobre {
-    margin: 9rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 9rem 5% 0 5%; 
     position: relative;
   }
 }
@@ -351,21 +351,21 @@
     margin: 2rem 5% 0 5%; /* Aumentei a margem superior para 5rem 
   } */
   #experiencia{
-    margin: 12rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 12rem 5% 0 5%; 
   }
   .experiencia-container {
-    margin: 4rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 4rem 5% 0 5%; 
   }
  
   @media screen and (max-height: 778px)  {
     #experiencia{
-      margin: 11rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 11rem 5% 0 5%; 
     
       }
     }
     @media screen and (max-height: 560px)  {
       #experiencia{
-        margin: 12rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+        margin: 12rem 5% 0 5%; 
       
         }
       }
@@ -374,10 +374,10 @@
 
 @media screen and (max-width: 568px) {
   section{
-    margin: 13rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 13rem 5% 0 5%; 
   }
   #sobre {
-    margin: 11rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 11rem 5% 0 5%; 
     position: relative;
   }
   /* #projetos {
@@ -388,49 +388,49 @@
 }
 @media screen and (max-width: 428px) { /* Iphone 13*/ 
   #projetos{
-    margin: 12rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 12rem 5% 0 5%; 
   }
   .sobre-containers{
     display: grid;
     align-items: center;
     justify-content: center;
-    margin: -2rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: -2rem 5% 0 5%; 
   }
   .detalhes-container{
     padding: 1rem;
     width: 15rem !important;
   }
   #experiencia{
-    margin: 13rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 13rem 5% 0 5%; 
   }
 
 } 
 @media screen and (max-width: 414px) {  /* Iphone XR*/
   section{
-    margin: 11rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 11rem 5% 0 5%; 
   }
   #sobre {
-    margin: 12rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 12rem 5% 0 5%; 
     position: relative;
   }
   #projetos{
-    margin: 11rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 11rem 5% 0 5%; 
   }
   .sobre-containers{
     display: grid;
     align-items: center;
     justify-content: center;
-    margin: 0rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 0rem 5% 0 5%; 
   }
   .detalhes-container{
     padding: 1rem;
     width: 20rem !important;
   }
   #experiencia{
-    margin: 13rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 13rem 5% 0 5%; 
   }
   #contato{
-    margin: 14rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 14rem 5% 0 5%; 
   }
 }
 @media screen and (max-width: 393px) { /* Galaxy Pixel 5*/
@@ -446,7 +446,7 @@
     font-size: 1.9rem;
   }
   section {
-    margin: 13rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 13rem 5% 0 5%; 
   }
   .links{
     font-size: 1.4rem;
@@ -456,23 +456,23 @@
   font-size: 0.6rem;
   }
   #sobre {
-    margin: 12rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 12rem 5% 0 5%; 
     position: relative;
   }
   #contato{
-    margin: 10rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 10rem 5% 0 5%; 
   }
   .experiencia-container{
-    margin: 2rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 2rem 5% 0 5%; 
     }
     #projetos{
-      margin: 12rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 12rem 5% 0 5%; 
     }
     .sobre-containers{
       display: grid;
       align-items: center;
       justify-content: center;
-      margin: 0rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 0rem 5% 0 5%; 
     }
     .detalhes-container{
       padding: 1rem;
@@ -480,71 +480,71 @@
     }
 
     #experiencia{
-      margin: 11rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 11rem 5% 0 5%; 
     }
 
   @media screen and (max-height: 844px)  {
     #contato{
-      margin: 13rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 13rem 5% 0 5%; 
     }
   
   }
   @media screen and (max-height: 780px)  {
     #experiencia{
-      margin: 13rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 13rem 5% 0 5%; 
     
       }
     }
     @media screen and (max-height: 560px)  {
       #experiencia{
-        margin: 12rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+        margin: 12rem 5% 0 5%; 
         }
       }
        
     }
 @media screen and (max-width: 375px) { /* Iphone X*/
   #sobre {
-    margin: 13rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 13rem 5% 0 5%; 
     position: relative;
   }
   #experiencia{
-    margin: 14rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 14rem 5% 0 5%; 
   }
   #contato{
-    margin: 16rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 16rem 5% 0 5%; 
   }
 }
 
 @media screen and (max-width: 360px) { /* Samsung Galaxy S20*/
   #perfil {
-    margin: 15rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 15rem 5% 0 5%; 
   }
   #sobre {
-    margin: 13rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 13rem 5% 0 5%; 
     position: relative;
   }
   #experiencia{
-    margin: 13rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 13rem 5% 0 5%; 
     }
     #projetos{
-      margin: 12rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 12rem 5% 0 5%; 
     }
     .sobre-containers{
       display: grid;
       align-items: center;
       justify-content: center;
-      margin: 1rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 1rem 5% 0 5%; 
     }
     .detalhes-container{
       padding: 1rem;
       width: 15rem !important;
     }
     #contato{
-      margin: 15rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 15rem 5% 0 5%; 
     }
     @media screen and (max-height: 880px)  {
       #contato{
-        margin: 14rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+        margin: 14rem 5% 0 5%; 
       }
         
     }
@@ -554,26 +554,26 @@
 @media screen and (max-width: 320px) { /* Iphone 5*/
 
   section {
-    margin: 16rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 16rem 5% 0 5%; 
     }
   #contato{
-    margin: 21rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 21rem 5% 0 5%; 
     }
     #sobre {
-      margin: 15rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 15rem 5% 0 5%; 
       position: relative;
     }
     #projetos{
-      margin: 16rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 16rem 5% 0 5%; 
     }
     #experiencia{
-      margin: 16rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 16rem 5% 0 5%; 
     }
     .sobre-containers{
       display: grid;
       align-items: center;
       justify-content: center;
-      margin: 1rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+      margin: 1rem 5% 0 5%; 
     }
     .detalhes-container{
       padding: 0.5rem;
@@ -583,7 +583,7 @@
 
 @media screen and (max-width: 162px) { /* Apple Watch Serie 6*/ 
   section{
-    margin: 19rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 19rem 5% 0 5%; 
   }
   .detalhes-container{
     border: none;
@@ -593,16 +593,16 @@
     margin-top: 5rem; /* Adicionei margem superior */
   }
   .sobre-detalhes-container{
-    margin: 2rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 2rem 5% 0 5%; 
     font-size: 0.8rem;
     align-items: center;
   }
   #sobre {
-    margin: 19rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 19rem 5% 0 5%; 
     position: relative;
   }
   #experiencia{
-    margin: 20rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 20rem 5% 0 5%; 
     
     align-items: center;
   }
@@ -636,7 +636,7 @@
     font-size: 1rem;
   }
   #contato{
-    margin: 30rem 5% 0 5%; /* Aumentei a margem superior para 5rem */
+    margin: 30rem 5% 0 5%; 
   }
   .contato-container{
     border: none;
